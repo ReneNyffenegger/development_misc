@@ -1,0 +1,61 @@
+digraph G {
+
+  node [shape=plaintext fontname="Arial"];
+
+  0  [label="zero"      ];
+  1  [label="one"       ];
+  2  [label="two"       ];
+  3  [label="three"     ];
+  4  [label="four"      ];
+  5  [label="five"      ];
+  6  [label="six"       ];
+  7  [label="seven"     ];
+  8  [label="eight"     ];
+  9  [label="nine"      ];
+  10 [label="ten"       ];
+  11 [label="eleven"    ];
+  12 [label="twelve"    ];
+  13 [label="thirteen"  ];
+  14 [label="fourteen"  ];
+  15 [label="fivteen"   ];
+  16 [label="sixteen"   ];
+  17 [label="seventeen" ];
+  18 [label="eighteen"  ];
+  19 [label="nineteen"  ];
+  20 [label="twenty"    ];
+  21 [label="twenty-one"];
+  22 [label="twenty-two"];
+
+  0  -> 1  [arrowhead=none];
+  1  -> 2  [arrowhead=none];
+  2  -> 7  [arrowhead=none];
+  7  -> 8  [arrowhead=none];
+  8  -> 9  [arrowhead=none];
+  8  -> 10 [arrowhead=none];
+  9  -> 10 [color="#aaaaaa" constraint=false];
+  10 -> 11 [arrowhead=none];
+  10 -> 12 [arrowhead=none];
+  11 -> 12 [color="#aaaaaa" constraint=false];
+  7  -> 13 [arrowhead=none];
+  8  -> 13 [color="#aaaaaa" constraint=false];
+  13 -> 14 [arrowhead=none];
+  7  -> 15 [arrowhead=none];
+  13 -> 15 [color="#aaaaaa" constraint=false];
+  15 -> 16 [arrowhead=none];
+  15 -> 17 [arrowhead=none];
+  16 -> 17 [color="#aaaaaa" constraint=false];
+  2  -> 3  [arrowhead=none];
+  7  -> 3  [color="#aaaaaa" constraint=false];
+  3  -> 4  [arrowhead=none];
+  2  -> 5  [arrowhead=none];
+  3  -> 5  [color="#aaaaaa" constraint=false];
+  5  -> 6  [arrowhead=none];
+  2  -> 18 [arrowhead=none];
+  5  -> 18 [color="#aaaaaa" constraint=false];
+  18 -> 19 [arrowhead=none];
+  19 -> 20 [arrowhead=none];
+  19 -> 21 [arrowhead=none];
+  20 -> 21 [color="#aaaaaa" constraint=false];
+  18 -> 22 [arrowhead=none];
+  19 -> 22 [color="#aaaaaa" constraint=false];
+}
