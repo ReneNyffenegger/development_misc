@@ -1,5 +1,7 @@
 package OpenStreetMap;
 
+
+
 require LWP::UserAgent;
 
 use XML::Parser;
@@ -32,6 +34,20 @@ sub api_call_ {
 sub capabilities {
   my $self = shift;
   return $self -> api_call_('capabilities');
+}
+
+sub node_ids_of_way {
+  my $self   = shift;
+  my $node_id= shift;  
+
+  my $text = $self -> api_call_("way/$node_id");
+
+  my (@node_ids) = $text =~ m!<nd ref="(\d+)"\s*!gm;
+
+  return @node_ids;
+  
+
+# Read: GET /api/0.6/[node|way|relation]
 }
 
 sub map {
