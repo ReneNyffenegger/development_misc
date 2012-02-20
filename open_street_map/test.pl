@@ -15,6 +15,9 @@ print $osm -> capabilities;
 #foreach my $nwr     (keys %{$kv->{$k}->{$v}      }) { print "     $nwr\n";
 #foreach my $node_id (     @{$kv->{$k}->{$v}{$nwr}}) { print "         $node_id\n"; } } } }
 
-print join "\n", $osm -> node_ids_of_way(134679962);
+#print join "\n", $osm -> nodeIdsOfWay(134679962);
 
+#my ($lat, $lon) = $osm -> latLonOfNode(1480393913);
+#print "lat: $lat, long: $lon\n";
 
+print join "\n", $osm -> wayIdsOfRelation(1682248);

@@ -1,6 +1,7 @@
+use warnings;
+use strict;
+
 package OpenStreetMap;
-
-
 
 require LWP::UserAgent;
 
@@ -10,6 +11,8 @@ sub new {
   my $self = {};
 
   $self -> {ua} = LWP::UserAgent->new;
+
+  $self -> {db} = 1;
 
   bless  $self;
   return $self;
@@ -27,6 +30,7 @@ sub api_call_ {
   }
 
   my $response = $self -> {ua} -> get("http://api.openstreetmap.org/api/0.6/$call_");
+# my $response = $self -> {ua} -> get("http://open.mapquestapi.com/xapi/api/0.6/$call_");
 
   return $response -> decoded_content;
 }
@@ -36,18 +40,41 @@ sub capabilities {
   return $self -> api_call_('capabilities');
 }
 
-sub node_ids_of_way {
-  my $self   = shift;
-  my $node_id= shift;  
+sub latLongOfNode {
+  my $self    = shift;
+  my $node_id = shift;
 
-  my $text = $self -> api_call_("way/$node_id");
+  my $text = $self -> api_call_("node/$node_id");
+
+  my ($lat)  = $text =~ m!\slat="([^"]+)"!;
+  my ($long) = $text =~ m!\slon="([^"]+)"!;
+
+  return {lat => $lat, long => $long};
+}
+
+sub nodeIdsOfWay {
+  my $self    = shift;
+  my $way_id  = shift;
+
+  my $text = $self -> api_call_("way/$way_id");
 
   my (@node_ids) = $text =~ m!<nd ref="(\d+)"\s*!gm;
 
   return @node_ids;
-  
+}
 
-# Read: GET /api/0.6/[node|way|relation]
+sub wayIdsOfRelation {
+  my $self         = shift;
+  my $relation_id  = shift;
+
+  my $text = $self -> api_call_("relation/$relation_id");
+
+  # Note, there might also be a node-member like so:
+  #   <member type="node" ref="240025182" role="label"/>
+
+  my (@way_ids) = $text =~ m!<member type="way" ref="(\d+)"!gm;
+
+  return @way_ids;
 }
 
 sub map {
@@ -63,7 +90,7 @@ sub map {
 
 sub keyValueInMap {
 
-#   This function takes a bounding box ($west .. $east, $north .. $south) 
+#   This function takes a bounding box ($west .. $east, $north .. $south)
 #   and retrieves the distinct keys, values, and ids.
 #   See test.pl for more details.
 
@@ -75,6 +102,8 @@ sub keyValueInMap {
   my $south  = shift;
 
   my $text = $self -> map($west, $east, $north, $south);
+
+  print $text;
 
   my $xml_parser = new XML::Parser(Style=>'Stream');
 
@@ -88,6 +117,7 @@ sub keyValueInMap {
 
   return $xml_parser -> parse($text);
 }
+
 
 #   { Functions used by XML::Parser, see setHandlers above.
 
@@ -104,7 +134,7 @@ sub xml_start_element {
   my $v;
 
   foreach my $attribute (keys %attributes) {
-   
+
     if ($element eq $expat -> {node_way_or_relation} and $attribute eq 'id') {
        $expat -> {current_id} = $attributes{$attribute};
     }
@@ -147,10 +177,11 @@ sub xml_final {
   return $expat->{returned};
 }
 
-# }
 
 sub xml_default {
 }
 
+
+# }
 
 1;
