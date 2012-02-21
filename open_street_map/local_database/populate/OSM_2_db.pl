@@ -175,7 +175,6 @@ sub xml_final {
   return $expat->{returned};
 }
 
-
 sub xml_default {
 }
 
