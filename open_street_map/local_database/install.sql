@@ -1,6 +1,6 @@
 /*  
 
-   mysql -u root -p%ROOT_PASSWORD% -e "set @PW='%OSM_PASSWORD%';source install_x.sql;"
+   mysql -u root -p%ROOT_PASSWORD% -e "set @PW='%OSM_PASSWORD%';source install.sql;"
 
 */
 

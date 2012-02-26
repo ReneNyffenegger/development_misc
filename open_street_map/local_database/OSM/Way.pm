@@ -48,8 +48,6 @@ sub asSvgPath {
 
   my $path = "<path style='$style' d='M"; # M: moveto (absolute)
 
-# my @nodeIds = $osm -> nodeIdsOfWay($wayId);
-
   my $first_node_id;
 
   my $counter = 0;

@@ -16,12 +16,17 @@ sub new {
 
   my $self  = {};
 
-  my $db = shift;
+  my $db       = shift;
+  my $username = shift;
+  my $password = shift;
 
-  $self -> {dbh} = DBI-> connect($db, shift, shift);
+  $self -> {dbh} = DBI-> connect($db, $username, $password);
 
 # TODO: Really necessary?
   $self -> {dbh} -> do('use osm');
+# http://www.gyford.com/phil/writing/2008/04/25/utf8_mysql_perl.php
+  $self -> {dbh} -> do('set names utf8');
+  $self -> {dbh} -> {mysql_enable_utf8} = 1;
 
   bless $self, $class;
 
@@ -36,6 +41,7 @@ sub Way {
 
   my $way  = new OSM::Way ($way_id);
 
+  #  TODO: should only be prepared once
   my $sth_way = $self -> {dbh} -> prepare(<<"SQL") or die;
 
         select
