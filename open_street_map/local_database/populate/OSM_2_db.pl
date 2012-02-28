@@ -5,6 +5,8 @@ use XML::Parser;
 use DBI;
 use utf8;
 
+print scalar(localtime), "\n";
+
 my $osmFileName = $ARGV[0];
 
 open (my $osmFile, '<', $osmFileName) or die "could not open $osmFileName";
@@ -12,9 +14,10 @@ open (my $osmFile, '<', $osmFileName) or die "could not open $osmFileName";
 my $xml_parser=new XML::Parser(Style=>'Stream');
 
 
-my $dbh = DBI->connect('DBI:mysql:osm', 'osmusr', $ENV{'OSM_PASSWORD');
+my $dbh = DBI->connect('DBI:mysql:osm', 'osmuser', $ENV{'OSM_PASSWORD'});
 $dbh -> do ("use osm");
 my $sth_insert_node         = $dbh -> prepare('insert into node       (id, lat, lon) values (?,?,?)');
+
 my $sth_insert_way          = $dbh -> prepare('insert into way        (id, building) values (?,?  )');
 my $sth_insert_relation     = $dbh -> prepare('insert into relation   (id          ) values (?    )');
 
@@ -41,7 +44,6 @@ $dbh -> commit;
 
 #   { Functions used by XML::Parser, see setHandlers above.
 
-my $counter=0;
 sub xml_start_element {
 
   my($expat, $element, %attributes) = @_;
@@ -154,12 +156,6 @@ sub xml_end_element {
     $expat -> {members } = [];
     $expat -> {building} =  0;
 
-    if ($counter ++ > 100000) {
-      print "commit\n";
-      $counter = 0;
-      $dbh -> commit;
-      $dbh -> begin_work;
-    }
   }
 }
 
@@ -180,5 +176,3 @@ sub xml_default {
 
 
 # }
-
-

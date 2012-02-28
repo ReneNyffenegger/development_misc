@@ -1,11 +1,9 @@
-@rem wieder rein tun. @set OSMDIR=c:\osm
-@rem wieder rein tun. 
-@rem wieder rein tun. @wget -O %OSMDIR%\switzerland.osm.bz2 http://download1.geofabrik.de/osm/europe/switzerland.osm.bz2 
-@rem wieder rein tun. @bzip2 -d %OSMDIR%\switzerland.osm.bz2
-@rem wieder rein tun. 
-@rem wieder rein tun. @perl ..\local_database\populate\splitOSMFile.pl %OSMDIR%\switzerland.osm > files_loaded.txt
-@rem wieder rein tun. 
+@set OSMDIR=c:\osm
 
+@wget -O %OSMDIR%\switzerland.osm.bz2 http://download1.geofabrik.de/osm/europe/switzerland.osm.bz2 
+@bzip2 -d %OSMDIR%\switzerland.osm.bz2
+
+@perl  ..\local_database\populate\splitOSMFile.pl %OSMDIR%\switzerland.osm > files_loaded.txt
 
 
 @REM   create the database

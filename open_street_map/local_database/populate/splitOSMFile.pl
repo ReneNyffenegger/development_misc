@@ -1,5 +1,10 @@
+#   
+#   One of the frustrating experiences when I tried to load an OpenPlanet OSM
+#   File was that it seemed to be too large to be handled by Perl and or
+#   the expat XML Parser.
 #
-#   File from http://download.geofabrik.de/osm (switzerland.osm)
+#   Therefore, the OSM XML file is now split into smaller parts that 
+#   should pose no problem to Perl/expat/XML.
 #
 use warnings;
 use strict;
@@ -13,8 +18,10 @@ my $osmFileOut;
 my $osmFileOutCounter = 0;
 
 open (my $osmFileIn , '<', $osmFileName);
-open (   $osmFileOut, '>', $osmFileName . '.' . $osmFileOutCounter ++);
 
+my $outOsmFileName = $osmFileName . '.' . ++$osmFileOutCounter;
+open (   $osmFileOut, '>', $outOsmFileName);
+print "$outOsmFileName\n";
 
 while (my $line = <$osmFileIn>) {
 
@@ -37,9 +44,10 @@ while (my $line = <$osmFileIn>) {
 
        close $osmFileOut;
 
-       print "osmFileOutCounter: $osmFileOutCounter line_counter: $line_counter\n";
+       $outOsmFileName = $osmFileName . '.' . ++$osmFileOutCounter;
+       open (   $osmFileOut, '>', $outOsmFileName);
+       print "$outOsmFileName\n";
 
-       open ($osmFileOut, '>', $osmFileName . '.' . $osmFileOutCounter ++);
        print $osmFileOut "<?xml version='1.0' encoding='UTF-8'?>\n";
        print $osmFileOut "<osm version=\"0.6\" generator=\"pbf2osm\">\n";
 
