@@ -1,0 +1,9 @@
+#  The directory into which the files from
+#  the downloaded source-zip go:
+sqlite-amalgamation
+
+#  The executable produced by the makefile
+embed_sqlite.exe
+
+#  The database that embed_sqlite.exe writes:
+countries.db
