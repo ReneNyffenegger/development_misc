@@ -1,3 +1,9 @@
+#
+#   TODO: 
+#     Compare with http://svn.openstreetmap.org/applications/utils/revert/OsmApi.pm (This link seems to show how credentials might be implemented)
+#           
+#
+
 use warnings;
 use strict;
 
