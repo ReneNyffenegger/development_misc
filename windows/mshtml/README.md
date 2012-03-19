@@ -18,3 +18,7 @@ DisplayHTML.exe can be called from the command line (that is most probably `cmd.
 or (in order to show a local html-file)
 
     c:\>DisplayHTML.exe  file://c:/path/to/some/file.html
+
+- - - -
+
+See also [the original link](http://www.adp-gmbh.ch/win/misc/mshtml/index.html)
