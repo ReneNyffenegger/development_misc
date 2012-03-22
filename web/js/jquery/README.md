@@ -35,8 +35,16 @@ Further keywords: addClass
 
 #click_01.html
 
-Uses `$('a')` to select *all* `<a>`s and applies `click()` to add a *click handler*.
+Uses `$('a')` to select *all* `<a>` and applies `click()` to add (or *bind*) a *click handler*.
 
 Further keywords: text(), this
 
 [Raw version](https://raw.github.com/ReneNyffenegger/development_misc/master/web/js/jquery/click_01.html)
+
+#add_remove_class_01.html
+
+Uses `addClass` and `removeClass` to change the appearance of a `<div>`.
+
+Further keywords: click().
+
+[Raw version](https://raw.github.com/ReneNyffenegger/development_misc/master/web/js/jquery/add_remove_class_01.html)

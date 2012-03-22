@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+  <title>add and remove class 01</title>
+
+  <style type='text/css'>
+     .someCssClass {background-color:#3366ff}
+  </style>
+
+  <script type='text/javascript' src='http://code.jquery.com/jquery-latest.min.js'></script>
+  <script type='text/javascript'>
+
+    $(document).ready(function(){
+       
+       $('#add'   ).click(function() {$('#target').addClass   ('someCssClass');});
+       $('#remove').click(function() {$('#target').removeClass('someCssClass');});
+
+
+    });
+
+  </script>
+</head>
+
+<body>
+   
+    <div id='target'>This is the div on which the following links call <code>addClass</code> and <code>removeClass</code>, respectively</div>
+
+    <a href='#' id='add'   >addClass</a>
+    <a href='#' id='remove'>removeClass</a>
+
+</body>
+</html>
