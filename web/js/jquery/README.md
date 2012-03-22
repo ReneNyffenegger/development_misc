@@ -48,3 +48,11 @@ Uses `addClass` and `removeClass` to change the appearance of a `<div>`.
 Further keywords: click().
 
 [Raw version](https://raw.github.com/ReneNyffenegger/development_misc/master/web/js/jquery/add_remove_class_01.html)
+
+#hide_show.html
+
+Uses `hide()` to hide a `<div>` and `show()` to show it again.
+
+Further keywords: click()
+
+[Raw version](https://raw.github.com/ReneNyffenegger/development_misc/master/web/js/jquery/hide_show.html)
