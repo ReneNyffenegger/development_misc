@@ -6,6 +6,7 @@ $(document).ready(function(){
     alert('Ready');
 });
 ```
+
 [Raw version](https://raw.github.com/ReneNyffenegger/development_misc/master/web/js/jquery/ready.html)
 
 # mousemove.html
@@ -15,6 +16,7 @@ Uses the `mousemove` event to track the coordinates of the mouse
 [Raw version](https://raw.github.com/ReneNyffenegger/development_misc/master/web/js/jquery/mousemove.html)
 
 further Keywords
+
  * pageX
  * pageY
 
@@ -22,5 +24,8 @@ further Keywords
 
 Demonstrates `$('#div_id')` to select a `<div>` via its *id*.
 
-*further Keywords
+further Keywords
+
  * addClass
+
+[Raw version](https://raw.github.com/ReneNyffenegger/development_misc/master/web/js/jquery/selector_01.html)
