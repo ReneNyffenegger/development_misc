@@ -15,17 +15,18 @@ Uses the `mousemove` event to track the coordinates of the mouse
 
 [Raw version](https://raw.github.com/ReneNyffenegger/development_misc/master/web/js/jquery/mousemove.html)
 
-further Keywords
-
- * pageX
- * pageY
+Further Keywords: *e.*pageX, *e.*pageY
 
 #selector_01.html
 
 Demonstrates `$('#div_id')` to select a `<div>` via its *id*.
 
-further Keywords
-
- * addClass
+Further Keywords: addClass
 
 [Raw version](https://raw.github.com/ReneNyffenegger/development_misc/master/web/js/jquery/selector_01.html)
+
+#selector_02.html
+
+Demonstrates `$('p')` to select all `<p>`s
+
+Further keywords: addClass
