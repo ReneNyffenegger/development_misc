@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>mousemove</title>
+
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+
+  <script type='text/javascript' src='http://code.jquery.com/jquery-latest.min.js'></script>
+
+  <script type='text/javascript'>
+
+    jQuery(document).ready(function() {
+       $(document).mousemove(function(e) {
+           $('div').html('<b>x</b>: ' + e.pageX + "<br><b>y</b>: " + e.pageY);
+       })
+    });
+  
+  </script>
+
+</head>
+
+<body>
+
+  <div id='out'>
+  </div>
+
+</body>
+</html>
