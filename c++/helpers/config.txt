@@ -1,0 +1,10 @@
+[section_1]
+foo  = bar
+water= H2O
+
+[section_2]
+foo  = foo
+water= wet
+;          This is a comment.
+four = 4.2
+#unknown = This is another comment.
