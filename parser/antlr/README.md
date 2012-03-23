@@ -6,4 +6,4 @@ A simple but helpful example found on stack overflow, [See here](https://github.
 
 ##grepWords
 
-A [grammar](https://raw.github.com/ReneNyffenegger/development_misc/master/parser/antlr/grepWords.g) to extract words from a string.
+A [grammar](https://raw.github.com/ReneNyffenegger/development_misc/master/parser/antlr/grepWords/grepWords.g) to extract words from a string.
