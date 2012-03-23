@@ -6,10 +6,10 @@
 with [Chameleon.cpp](https://raw.github.com/ReneNyffenegger/development_misc/master/c++/misc/Chameleon.cpp) so that the values in the config
 file can be assigned to `double` and to `std::string`
 
-   ConfigFile cf("configFile.txt");
+    ConfigFile cf("configFile.txt");
 
-   double      d = cf.Value (...);
-   std::string s = cf.Value (...);
+    double      d = cf.Value (...);
+    std::string s = cf.Value (...);
 
 However, this approach caused more problems than it solved. Therefore, I decided to forego `Chameleon`. The class can now only be used to return `std::strings`.
 
