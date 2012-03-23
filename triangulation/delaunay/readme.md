@@ -8,5 +8,7 @@ triangulation</i> that runs on Oracle. The following two links were very helpful
 
 The goal was to <i>understand</i> the algorithm rather than to make it fast.
 
+##Links
 
+[http://www.qhull.org/](Qhull) seems to be pretty much the standard delaunay library that many people use
 
