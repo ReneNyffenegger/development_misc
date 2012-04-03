@@ -2,11 +2,6 @@
 //        javac OracleSimple.java
 //
 //        set JDBCJAR=%ORACLE_HOME%\jdbc\lib\ojdbc5.jar
-//        set ORAUSER=spezmdba
-//        set ORAPW=***********
-//        set DBSERVER=dbsrv70a.eng.zkb.ch
-//        set DBPORT=10922
-//        set DBNAME=AMDS64.eng.zkb.ch
 //
 //        java -cp ".;%JDBCJAR%"  OracleSimple  rene  rene  localhost 1521 ORA11R2
 //
