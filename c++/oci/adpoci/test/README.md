@@ -8,7 +8,6 @@ Execute read_pipe:
 
     read_pipe.exe username/password@DB queue_name
 
-then write into a pipe with [PL/SQL](https://raw.github.com/ReneNyffenegger/development_misc/master/c++/oci/adpoci/test/write_into_pipe.sql),
-then reading from it with `read_pipe.exe`.
+then write into a pipe with [PL/SQL](https://raw.github.com/ReneNyffenegger/development_misc/master/c++/oci/adpoci/test/write_into_pipe.sql).
 
 See also http://www.adp-gmbh.ch/ora/misc/oci/adpoci/read_pipe.html
