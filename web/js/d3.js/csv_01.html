@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSV Test 01</title>
+  <script type="text/javascript" src="d3.v2.min.js"></script>
+  <style type="text/css">
+
+  span   {width:70px;display:inline-block;}
+
+  .col_1 {background-color:#ffcccc;}
+  .col_2 {background-color:#ccffcc;}
+  .col_3 {background-color:#ccccff;}
+
+  body {
+    font: 12px sans-serif;
+  }
+
+  </style>
+
+</head>
+<body>
+  <script type="text/javascript">
+  
+    function writeCSVDatum(className, text) {
+
+      var span=document.createElement('span');
+      span.className = className;
+      span.innerHTML=text;
+      document.body.appendChild(span);
+  
+    }
+  
+    d3.csv("csv_01.csv", function(data) {
+//  -------------------------------------
+      data.forEach(function(line)       { 
+
+      // Iterate over each line in the csv:
+  
+         writeCSVDatum('col_1', line.col_1);
+         writeCSVDatum('col_2', line.col_2);
+         writeCSVDatum('col_3', line.col_3);
+
+         document.body.appendChild(document.createElement('br'));
+    
+     });
+   });
+
+  </script>
+</body>
+</html>
