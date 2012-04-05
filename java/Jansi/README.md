@@ -4,6 +4,11 @@ See https://github.com/fusesource/jansi
 
 [Download](http://jansi.fusesource.org/download.html)
 
+## SimpleTest.java
+
+A simple test that outputs some text in different colors.
+
+
 ## WindowsTerminalWidthHeight.java
 
 Determines the Width and Height (and other figures) of Terminal. 
