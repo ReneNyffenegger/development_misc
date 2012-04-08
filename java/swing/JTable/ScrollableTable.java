@@ -13,7 +13,7 @@ public class  ScrollableTable {
 
        public static void main(String[]_) throws Exception {
              
-              Vector<Vector<String>> tableData = readTXTFile("data.csv");
+              Vector<Vector<String>> tableData = readCSVFile("data.csv");
 
               Vector<String> header = new Vector<String>();
 
@@ -23,26 +23,29 @@ public class  ScrollableTable {
                              header.addElement("Col 4");
 
 
+         //   Create the 'JTable'. The following constructor makes
+         //   every cell editable. If this is not desired, a
+         //  'TableModel' must be implemented.
               JTable      table      = new JTable(tableData, header);
-              JScrollPane scrollPane = new JScrollPane(table);
-              JPanel      panel      = new JPanel(); 
-              JFrame      frame      = new JFrame("Frame containing a JPanel");
 
-//            table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+              JScrollPane scrollPane = new JScrollPane(table);
+
+              JFrame      frame      = new JFrame("Frame containing a JPanel");
 
               frame.setUndecorated(true); 
               frame.getRootPane().setWindowDecorationStyle(JRootPane.PLAIN_DIALOG);
               frame.setSize(500,250);
               frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-              panel.add(scrollPane );
-              frame.add(panel);
+              frame.add(scrollPane);
 
               frame.setVisible(true);
        }
 
 
-       private static Vector<Vector<String>> readTXTFile(String csvFileName) throws Exception {
+       private static Vector<Vector<String>> readCSVFile(String csvFileName) throws Exception {
+
+         //    http://codereview.stackexchange.com/questions/10681/java-function-to-read-a-csv-file/10687#10687
 
                BufferedReader stream = new BufferedReader(new InputStreamReader(new FileInputStream(csvFileName)));
 
@@ -53,12 +56,14 @@ public class  ScrollableTable {
 
                        csvData.add(new Vector<String>() );
 
-                       String[] values = line.split(",");
+                       String[] splitted = line.split(",");
 
-                       for (int v=0; v<values.length; v++) {
+                       for (int v=0; v<splitted.length; v++) {
                             csvData.get(csvData.size()-1).add(values[v]);
                        }
                }
+
+               stream.close();
 
                return csvData;
        }
