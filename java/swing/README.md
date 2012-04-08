@@ -13,3 +13,10 @@ A **JEditorPane** can be used to display HTML or RTF.
 
 [This example](https://raw.github.com/ReneNyffenegger/development_misc/master/java/swing/JEditorPane/HtmlLinks.java) extends *GeneratedHTML.java* in that
 it has links that can be clicked.
+
+#JTable
+
+A **JTable** displays *tabular* data.
+
+[ScrollableTable.java](https://raw.github.com/ReneNyffenegger/development_misc/master/java/swing/JTable/ScrollableTable.java) displays
+[this csv file](https://raw.github.com/ReneNyffenegger/development_misc/master/java/swing/JTable/ScrollableTable.java).
