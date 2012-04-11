@@ -1,6 +1,5 @@
 import javax.swing.JFrame;
 
-
 public class Simplest {
 
        public static void main(String[]_) {
