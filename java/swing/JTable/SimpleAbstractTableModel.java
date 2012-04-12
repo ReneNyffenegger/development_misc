@@ -1,5 +1,3 @@
-//     http://www.kodejava.org/examples/699.html
-
 import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
 
