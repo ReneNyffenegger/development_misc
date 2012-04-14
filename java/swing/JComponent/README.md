@@ -39,3 +39,6 @@ it has links that can be clicked.
 A *JComponenent* can have borders. Usually, borders are only used with *JPanels* and *JLabels*.
 
 Borders themselves are not *JComponent*.
+
+[SimpleBorderOnLabel.java](https://raw.github.com/ReneNyffenegger/development_misc/master/java/swing/JComponent/borders/SimpleBorderOnLabel.java) draws three labels with colored borders. The thickness of
+the borders varies.
