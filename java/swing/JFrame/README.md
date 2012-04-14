@@ -2,11 +2,13 @@
 
 **JFrame** is one of the three generally useful *top level container* classes. The others are `JDialog` and `JApplet`.
 
-[Simplest.java](https://raw.github.com/ReneNyffenegger/development_misc/master/java/swing/JFrame/Simplest.java) has a member whose type is a *JFrame*, initializes it, and makes it visible.
+[Simplest.java](https://raw.github.com/ReneNyffenegger/development_misc/master/java/swing/JFrame/Simplest.java) instantiates a variable whose type is a *JFrame*, initializes it, and makes it visible.
 
 [ClassExtendsJFrame.java](https://raw.github.com/ReneNyffenegger/development_misc/master/java/swing/JFrame/ClassExtendsJFrame.java) is more or less the same as *Simplest.java*, yet, the class
 itself derives from a *JFrame*.
 
+[WindowEventReceiver.java](https://raw.github.com/ReneNyffenegger/development_misc/master/java/swing/JFrame/WindowEventReceiver.java) implmenents the `WindowAdapter` interface and
+is thus able to receive notifications such like the window *being closed* or *activated*.
 
 
 ---------
