@@ -10,5 +10,5 @@ The goal was to <i>understand</i> the algorithm rather than to make it fast.
 
 ##Links
 
-(Qhull)[http://www.qhull.org/] seems to be pretty much the standard delaunay library that many people use
+[Qhull](http://www.qhull.org/) seems to be pretty much the standard delaunay library that many people use
 
