@@ -1,10 +1,6 @@
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.border.*;
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
+import java .awt  .      *;
+import java .awt  .event.*;
+import javax.swing.      *;
  
 class LoginDialog extends JDialog {
  
@@ -21,9 +17,17 @@ class LoginDialog extends JDialog {
 
       JPanel createNamePasswordPanel() {
 
+         //  This is the panel that demonstrats the GridBagLayout.
+         //
+         //  It places for components into a grid (See -> AddInGrid below),
+         //  thus forcing them to be aligned.
+
+         //  The two labels:
              JLabel lblUserName;
              JLabel lblPassWord;
 
+         //  The text fields are members of the class since they need to be
+         //  accessible in the ActionListener.
 
              JPanel panel = new JPanel(new GridBagLayout());
              GridBagConstraints cs = new GridBagConstraints();
@@ -40,8 +44,6 @@ class LoginDialog extends JDialog {
              AddInGrid(cs, 0, 1, 1, panel, lblPassWord);
              AddInGrid(cs, 1, 0, 2, panel, txtUsername);
              AddInGrid(cs, 1, 1, 2, panel, txtPassword);
-
-             panel.setBorder(new LineBorder(Color.GRAY));
 
              return panel;
       }
