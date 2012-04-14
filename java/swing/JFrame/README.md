@@ -10,6 +10,8 @@ itself derives from a *JFrame*.
 [WindowEventReceiver.java](https://raw.github.com/ReneNyffenegger/development_misc/master/java/swing/JFrame/WindowEventReceiver.java) implmenents the `WindowAdapter` interface and
 is thus able to receive notifications such like the window *being closed* or *activated*.
 
+[SetWindowBounds.java](https://raw.github.com/ReneNyffenegger/development_misc/master/java/swing/JFrame/SetWindowBounds.java) uses `JFrame.setBounds` to place the JFrame indented
+100 pixels from the edges from the screen. (Compare also with [ScreenSize.java](https://raw.github.com/ReneNyffenegger/development_misc/master/java/awt/Toolkit/ScreenSize.java).
 
 ---------
 
