@@ -2,7 +2,21 @@
 
 ##  JButton
 
+##  JInternalFrame
+
+Sort of a `JFrame` window within another window.
+
+Usually, *JInternalFrames* are added to a *JDesktopPane*.
+
+[InternalFrames.java](https://raw.github.com/ReneNyffenegger/development_misc/master/java/swing/JComponent/JInternalFrame/InternalFrames.java) creates a *JDesktopPane* and places 16 *JInternalFrame* into it.
+
 ##  JLabel
+
+##  JLayeredPane
+
+A *JLayeredPane* handles *JComponents* and gives them a *z-Axis* value. So, JComponents placed into *JLayeredPanes* can be one atop of another.
+
+### JDesktopPane
 
 ##  JMenuBar
 
@@ -31,6 +45,8 @@ it has links that can be clicked.
 
 
 ##  JToggleButton
+
+##  JToolBar
 
 ##  JTree
 
