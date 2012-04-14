@@ -20,7 +20,7 @@ The *FlowLayout* is the default layout for a *JPanel*.
 
 ## GridBagLayout
 
-[SimpleLoginDialog](https://raw.github.com/ReneNyffenegger/development_misc/master/java/swing/LayoutManagers/GridBagLayout/SimpleLoginDialog.java) creates a 
+[SimpleLoginDialog.java](https://raw.github.com/ReneNyffenegger/development_misc/master/java/swing/LayoutManagers/GridBagLayout/SimpleLoginDialog.java) creates a 
 `JDialog` (the class `LoginDialog` which derives from `JDialog`). This dialog adds two `JPanel`s. The *panel* created with `createNamePasswordPanel()`
 uses the *GridBagLayout* layout manager in order to align the labels and the text boxes.
 
