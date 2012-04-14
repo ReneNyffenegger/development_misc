@@ -10,6 +10,8 @@
 
 ##  JPanel
 
+A **JPanel** is useful for grouping other *JComponents*, for simplifying their layout and drawing borders around such groups.
+
 ##  JScrollBar
 
 ##  JTabbedPane
@@ -29,3 +31,11 @@ it has links that can be clicked.
 ##  JToggleButton
 
 ##  JTree
+
+----------
+
+##  Borders
+
+A *JComponenent* can have borders. Usually, borders are only used with *JPanels* and *JLabels*.
+
+Borders themselves are not *JComponent*.
