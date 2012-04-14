@@ -8,6 +8,8 @@
 
 ##  JMenuItem
 
+##  JOptionPane
+
 ##  JPanel
 
 A **JPanel** is useful for grouping other *JComponents*, for simplifying their layout and drawing borders around such groups.
