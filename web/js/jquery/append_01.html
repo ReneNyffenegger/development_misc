@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+  <title>append 01</title>
+
+  <style type='text/css'>
+     .cell {position:absolute;
+            border:1px solid black;
+           }
+  </style>
+
+  <script type='text/javascript' src='http://code.jquery.com/jquery-latest.min.js'></script>
+  <script type='text/javascript'>
+
+
+     function decimalToHex(d, padding) {
+     //
+     //   http://stackoverflow.com/a/57807/180275
+     //
+          var hex = Number(d).toString(16);
+          padding = 2;
+     
+          while (hex.length < padding) {
+              hex = "0" + hex;
+          }
+     
+          return hex;
+     }
+
+     function createGrid(numberOfRows, numberOfColumns, cellLength) {
+
+          for (var x=0; x<numberOfColumns; x++) {
+          for (var y=0; y<numberOfRows   ; y++) {
+
+               $('#container') . append (
+
+                   '<div style="'                                                                   +
+                           'background-color:#' + decimalToHex(Math.floor(Math.random()*127) + 128) +
+                                                  decimalToHex(Math.floor(Math.random()*127) +   0) +
+                                                  decimalToHex(Math.floor(Math.random()*127) +  64) +
+                          ';left:'   + (x*cellLength + 20) + 'px'                                   +
+                          ';top:'    + (y*cellLength + 20) + 'px'                                   +
+                          ';width:'  +    cellLength       + 'px'                                   +
+                          ';height:' +    cellLength       + 'px"'                                  +
+                          ' '                                                                       +
+                          'class="cell"></div>'
+               );
+          }}
+
+     }
+
+
+     $(document).ready(function(){
+          
+       // create a 10x10 grid, with the cells 25 px
+          createGrid(10, 10, 25);
+   
+     });
+
+  </script>
+
+</head>
+
+<body>
+   
+    <div id='container'>
+    </div>
+
+</body>
+</html>

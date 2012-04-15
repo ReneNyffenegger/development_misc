@@ -60,3 +60,7 @@ Further keywords: click()
 #val.html
 
 [val.html](https://raw.github.com/ReneNyffenegger/development_misc/master/web/js/jquery/val.html) demonstrates [.val()](http://api.jquery.com/val/) in order to get the values of `<input>` elements.
+
+#append_01.html
+
+[append_01.html](https://raw.github.com/ReneNyffenegger/development_misc/master/web/js/jquery/append_01.html) demonstrates [.append()](http://api.jquery.com/append/): the function `createGrid` accepts the three parameters `numberOfRows`, `numberOfColumns` and `cellLength` and creates an according grid in the `<div id='container'></div>`.
