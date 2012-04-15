@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>.val()</title>
+
+  <script type='text/javascript' src='http://code.jquery.com/jquery-latest.min.js'></script>
+
+  <script type="text/javascript">
+
+    $(document).ready ( function(){
+
+         $('#ok').click(function(){
+    
+               var value_1 = $('#value1').val();
+               var value_2 = $('#value2').val();
+
+               $('#out').html('You entered:<br>' +
+                              'Value one: ' + value_1 + '<br>' +
+                              'Value two: ' + value_2);
+    
+         });
+
+    });
+
+  </script>
+</head>
+
+<body>
+
+    <b>Value one:</b> <input type="text" id="value1"/><br>
+    <b>Value two:</b> <input type="text" id="value2"/><br>
+  
+    <input type="submit" value="Click me!" id="ok" /> 
+  
+    <div id='out'>
+    </div>
+
+</body>
+</html> 
