@@ -1,7 +1,8 @@
-drop table   dt_edge;
-drop table   dt_triangle;
-drop table   dt_point;
-drop package dt;
+drop table   dt_edge     purge;
+drop table   dt_triangle purge;
+drop table   dt_point    purge;
+
+drop package delaunay_triangulation;
 
 create table dt_point (
    x   number     not null,
