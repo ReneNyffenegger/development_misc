@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Table with fixed header, scrollable content</title>
+
+<style type="text/css">
+
+.outerTable {border-collapse:collapse; margin:0 auto;}
+.contentTable {border-collapse:collapse;}
+
+.headerCol1 , .dataCol1 {width: 90px; text-align:left ;padding-left:10px; padding-right:10px}
+.headerCol2 , .dataCol2 {width: 90px; text-align:right;padding-left:10px; padding-right:10px}
+.headerCol3 , .dataCol3 {width: 90px; text-align:left ;padding-left:10px; padding-right:10px}
+.headerCol4 , .dataCol4 {             text-align:left ;padding-left:10px; padding-right:10px}
+
+.headerCol4             {width:120px;} /* Make last header column's width width a */
+.dataCol4               {width: 90px;} /* bit wider to account for the scroll bar */
+
+.contentDiv {height:150px; overflow:auto;}
+
+.headerCol1,
+.headerCol2,
+.headerCol3,
+.headerCol4 {background-color:#aaaaaa;font-weight:bold}
+
+
+</style>
+
+</head>
+
+<body>
+
+<table class="outerTable" summary=".">
+
+    <tr>
+      <td class="headerCol1">Column one</td> 
+      <td class="headerCol2">Column two</td> 
+      <td class="headerCol3">Column three</td> 
+      <td class="headerCol4">Column four</td> 
+    </tr>
+
+  <tbody>
+    <tr>
+       <td colspan="4">
+
+          <div class="contentDiv">
+
+            <table class="contentTable" summary='.'>
+
+              <tr>
+                <td class='dataCol1'>data 1</td>
+                <td class='dataCol2'>22.34</td>
+                <td class='dataCol3'>data 3</td>
+                <td class='dataCol4'>data 4</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>foo</td>
+                <td class='dataCol2'>127.45</td>
+                <td class='dataCol3'>bar</td>
+                <td class='dataCol4'>baz</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>abc</td>
+                <td class='dataCol2'>  2.90</td>
+                <td class='dataCol3'>def ghi jkl</td>
+                <td class='dataCol4'>mno pqr</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>data 1</td>
+                <td class='dataCol2'>22.34</td>
+                <td class='dataCol3'>data 3</td>
+                <td class='dataCol4'>data 4</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>foo</td>
+                <td class='dataCol2'>127.45</td>
+                <td class='dataCol3'>bar</td>
+                <td class='dataCol4'>baz</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>abc</td>
+                <td class='dataCol2'>  2.90</td>
+                <td class='dataCol3'>def ghi jkl</td>
+                <td class='dataCol4'>mno pqr</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>data 1</td>
+                <td class='dataCol2'>22.34</td>
+                <td class='dataCol3'>data 3</td>
+                <td class='dataCol4'>data 4</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>foo</td>
+                <td class='dataCol2'>127.45</td>
+                <td class='dataCol3'>bar</td>
+                <td class='dataCol4'>baz</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>abc</td>
+                <td class='dataCol2'>  2.90</td>
+                <td class='dataCol3'>def ghi jkl</td>
+                <td class='dataCol4'>mno pqr</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>data 1</td>
+                <td class='dataCol2'>22.34</td>
+                <td class='dataCol3'>data 3</td>
+                <td class='dataCol4'>data 4</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>foo</td>
+                <td class='dataCol2'>127.45</td>
+                <td class='dataCol3'>bar</td>
+                <td class='dataCol4'>baz</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>abc</td>
+                <td class='dataCol2'>  2.90</td>
+                <td class='dataCol3'>def ghi jkl</td>
+                <td class='dataCol4'>mno pqr</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>data 1</td>
+                <td class='dataCol2'>22.34</td>
+                <td class='dataCol3'>data 3</td>
+                <td class='dataCol4'>data 4</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>foo</td>
+                <td class='dataCol2'>127.45</td>
+                <td class='dataCol3'>bar</td>
+                <td class='dataCol4'>baz</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>abc</td>
+                <td class='dataCol2'>  2.90</td>
+                <td class='dataCol3'>def ghi jkl</td>
+                <td class='dataCol4'>mno pqr</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>data 1</td>
+                <td class='dataCol2'>22.34</td>
+                <td class='dataCol3'>data 3</td>
+                <td class='dataCol4'>data 4</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>foo</td>
+                <td class='dataCol2'>127.45</td>
+                <td class='dataCol3'>bar</td>
+                <td class='dataCol4'>baz</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>abc</td>
+                <td class='dataCol2'>  2.90</td>
+                <td class='dataCol3'>def ghi jkl</td>
+                <td class='dataCol4'>mno pqr</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>data 1</td>
+                <td class='dataCol2'>22.34</td>
+                <td class='dataCol3'>data 3</td>
+                <td class='dataCol4'>data 4</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>foo</td>
+                <td class='dataCol2'>127.45</td>
+                <td class='dataCol3'>bar</td>
+                <td class='dataCol4'>baz</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>abc</td>
+                <td class='dataCol2'>  2.90</td>
+                <td class='dataCol3'>def ghi jkl</td>
+                <td class='dataCol4'>mno pqr</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>data 1</td>
+                <td class='dataCol2'>22.34</td>
+                <td class='dataCol3'>data 3</td>
+                <td class='dataCol4'>data 4</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>foo</td>
+                <td class='dataCol2'>127.45</td>
+                <td class='dataCol3'>bar</td>
+                <td class='dataCol4'>baz</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>abc</td>
+                <td class='dataCol2'>  2.90</td>
+                <td class='dataCol3'>def ghi jkl</td>
+                <td class='dataCol4'>mno pqr</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>data 1</td>
+                <td class='dataCol2'>22.34</td>
+                <td class='dataCol3'>data 3</td>
+                <td class='dataCol4'>data 4</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>foo</td>
+                <td class='dataCol2'>127.45</td>
+                <td class='dataCol3'>bar</td>
+                <td class='dataCol4'>baz</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>abc</td>
+                <td class='dataCol2'>  2.90</td>
+                <td class='dataCol3'>def ghi jkl</td>
+                <td class='dataCol4'>mno pqr</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>data 1</td>
+                <td class='dataCol2'>22.34</td>
+                <td class='dataCol3'>data 3</td>
+                <td class='dataCol4'>data 4</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>foo</td>
+                <td class='dataCol2'>127.45</td>
+                <td class='dataCol3'>bar</td>
+                <td class='dataCol4'>baz</td>
+              </tr>
+
+              <tr>
+                <td class='dataCol1'>abc</td>
+                <td class='dataCol2'>  2.90</td>
+                <td class='dataCol3'>def ghi jkl</td>
+                <td class='dataCol4'>mno pqr</td>
+              </tr>
+
+            </table>
+
+        </div>
+
+       </td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
