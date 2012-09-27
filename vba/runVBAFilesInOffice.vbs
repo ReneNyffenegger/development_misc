@@ -225,9 +225,16 @@ sub addReference(obj, guid)
 
   if err.number <> 0 then ' {
 
-     '  one wonders what 32813 is
-     if err.number <> 32813 then
-          msgBox "Error: " & err.number & vbNewLine & err.description
+     if      err.number   =  -2147319779  then
+
+     '       TODO:
+     '       In german, the error message is «Objektbibliothek nicht registriert»
+
+     elseif  err.number <> 32813 then
+
+     '       one wonders what 32813 is
+             msgBox "Error: " & err.number & vbNewLine & err.description
+
      end if
 
   end if ' }
