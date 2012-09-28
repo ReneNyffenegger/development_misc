@@ -28,6 +28,28 @@
 '     sollte auf dem Office Button in (zB) Word auf 
 '        (Word-)Optionen gegangen werden -> Vertrauensstellungscenter -> Einstellungen für Vertrauensstellungscenter -> Einstellungen für Makros -> Zugriff auf das VBA-Projektobjektmodell vertrauen
 '     gemacht werden.
+'   sollte auf dem Office Button in (zB) Word auf
+'      (Word-)Optionen gegangen werden              -> 
+'       Vertrauensstellungscenter                   -> 
+'       Einstellungen für Vertrauensstellungscenter -> 
+'       Einstellungen für Makros                    -> 
+'       Zugriff auf das VBA-Projektobjektmodell vertrauen
+'   gemacht werden.
+'
+'   --------------------------------------------------------------------------
+'
+'   Bei der Fehlermeldung in Visio (2007)
+'
+'        Programmzugang zu einem Visual Basic-Projekt ist deaktiviert.
+'        Code: 86DB08BA
+'
+'    sollte in
+'      Extras                    -> 
+'      Vertrauensstellungscenter -> 
+'      Einstellungen für Makros  ->
+'    das Häckchen auf
+'      Zugriff auf das VBA-Projektobjektmodell vertrauen
+'    gesetzt werden.
 '      
 
 option explicit
@@ -52,7 +74,7 @@ end function ' }
 
 
                           ' .vbs doesn't allow to explicitely
-                          '      dfine datatypes...
+                          '  define datatypes...
                           '            
 dim office_app            ' as  object
 dim office_doc            ' as  object
@@ -192,21 +214,17 @@ end if ' }
 ' }
 else ' { Call a function in Visio:
  if      args.count - cur_param =  0 then ' {
-  office_doc.executeLine function_name_to_call '}
+  call office_doc.executeLine(function_name_to_call) ' }
  elseif  args.count - cur_param =  1 then ' {
-' msgBox(                     function_name_to_call & " """ & args(cur_param) & """ ")
   call office_doc.executeLine(function_name_to_call & " """ & args(cur_param) & """ ") ' }
  elseif  args.count - cur_param =  2 then ' {
-' msgBox                       (function_name_to_call & "(""" & args(cur_param) & """,""" & args(cur_param+1) & """)") 
   call office_doc.executeLine(function_name_to_call & """" & args(cur_param) & """,""" & args(cur_param+1) & """") ' }
  elseif  args.count - cur_param =  3 then ' {
-' msgBox( function_name_to_call & "(""" & args(cur_param) & """,""" & args(cur_param+1) & """,""" & args(cur_param+2) & """)")
   call office_doc.executeLine(function_name_to_call & """" & args(cur_param) & """,""" & args(cur_param+1) & """,""" & args(cur_param+2) & """") ' }
  elseif  args.count - cur_param =  4 then ' {
-' msgBox(                     function_name_to_call & """" & args(cur_param) & """,""" & args(cur_param+1) & """,""" & args(cur_param+2) & """,""" & args(cur_param+3) & """") ' }
   call office_doc.executeLine(function_name_to_call & """" & args(cur_param) & """,""" & args(cur_param+1) & """,""" & args(cur_param+2) & """,""" & args(cur_param+3) & """") ' }
  else  ' {
-   msgBox("Nicht implementierte Anzahl von Parametern für Visio!")
+   msgBox("Count of parameters not yet implemented for visio!")
    Wscript.quit
  end if ' }
 end if ' }
