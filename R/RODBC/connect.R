@@ -1,5 +1,5 @@
 #
-#
+#   r -f connect.R
 #
 
 library(RODBC)
