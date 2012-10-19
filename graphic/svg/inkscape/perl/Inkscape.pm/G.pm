@@ -1,3 +1,5 @@
+use warnings;
+use strict;
 package G;
 use Path;
 use Rect;
