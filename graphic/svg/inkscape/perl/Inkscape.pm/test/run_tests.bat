@@ -7,3 +7,4 @@
 @call t.bat rect-stroke-paint
 @call t.bat rect-stroke-fill
 @call t.bat rect-fill-gradient
+@call t.bat filter-bubble-text

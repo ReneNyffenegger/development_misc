@@ -18,8 +18,8 @@ sub new {
   $self->{style}->{'font-stretch'}                 = 'normal';
   $self->{style}->{'text-align'}                   = 'start';
   $self->{style}->{'line-height'}                  = '100%';
-  $self->{style}->{'letter-spacing'}               = '0px';
-  $self->{style}->{'word-spacing'}                 = '0px';
+  $self->{style}->{'letter-spacing'}               = '0px';  # TODO: letter-spacing and
+  $self->{style}->{'word-spacing'}                 = '0px';  # word-spacing should probably be optional
   $self->{style}->{'writing-mode'}                 = 'lr-tb';
   $self->{style}->{'text-anchor'}                  = 'start';
   $self->{style}->{'fill'}                         = '#000000';
@@ -45,6 +45,7 @@ sub new {
     {name => 'fill'                          , optional => 0},
     {name => 'fill-opacity'                  , optional => 0},
     {name => 'stroke'                        , optional => 0},
+    {name => 'filter'                        , optional => 1, default=>''},
     {name => 'font-family'                   , optional => 0},
     {name => '-inkscape-font-specification'  , optional => 0},
   ];
@@ -83,6 +84,20 @@ sub write {
   }
 
   print $svgFile "</text>\n";
+}
+
+sub style {
+  my $self       = shift;
+  my $style_text = shift;
+
+  Inkscape::style_($self, $style_text);
+}
+
+sub applyFilter {
+  my $self   = shift;
+  my $filter = shift;
+
+  Inkscape::applyFilter_($self, $filter, @_);
 }
 
 1;

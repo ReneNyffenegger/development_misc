@@ -6,6 +6,7 @@ use File::Basename;
 use G;
 use GradientDefinition;
 use GradientUsage;
+use Filter;
 
 sub new {
   my $self = {};
@@ -105,7 +106,7 @@ EFG
    id="what-is-this-id-good-for">
 EFG
 
-  if (exists $self->{gradientDefinitions}) {
+  if (exists $self->{gradientDefinitions} or exists $self->{filters}) {
 
     print $svgFile "  <defs\n";
     print $svgFile "     id=\"defs999\">\n";
@@ -114,6 +115,11 @@ EFG
        $grad -> write($svgFile);
     }
 
+    # This loop does not write the layers itself. It
+    # writes gradient definitions that might be applicable
+    # for a layer.
+    #
+    # The layers are written further down.
     for my $layer (@{$self->{layers}}) {
       for my $elem (@{$layer->{elems}}) {
 
@@ -121,6 +127,10 @@ EFG
           $elem->{gradient}->write($svgFile);
         }
       }
+    }
+
+    for my $filter(@{$self->{filters}}) {
+      $filter->write($svgFile);
     }
 
     print $svgFile "  </defs>\n";
@@ -167,6 +177,7 @@ EFG
   </metadata>
 ABC
 
+  # Write the layers and their content.
   foreach my $layer (@{$self->{layers}}) {
     $layer->write($svgFile, 1);
   }
@@ -251,13 +262,29 @@ sub gradient {
 }
 
 sub applyGradient_ {
-
   my $elem               = shift;
   my $gradientDefinition = shift;
 
   $elem -> {gradient} = new GradientUsage($gradientDefinition, @_);
 
   $elem -> style("fill:url(#$gradientDefinition->{type}Gradient$elem->{gradient}->{id})");
+}
+
+sub applyFilter_ {
+  my $elem   = shift;
+  my $filter = shift;
+
+  $elem -> style('filter:url(#' . $filter->{id} . ')');
+}
+
+sub filter {
+  my $self = shift;
+
+  my $filter = new Filter(@_); # @_ is most probably the empty list ().
+
+  push @{$self->{filters}}, $filter;
+
+  return $filter;
 }
 
 1;
