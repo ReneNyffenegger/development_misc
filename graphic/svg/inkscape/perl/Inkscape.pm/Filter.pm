@@ -2,6 +2,8 @@ package Filter;
 
 use     feComposite;
 use     feGaussianBlur;
+use     feMerge;
+use     feOffset;
 use     feSpecularLighting;
 
 my $id=1;
@@ -31,6 +33,16 @@ sub write {
   print $svgFile "    </filter>\n";
 }
 
+my $result=0;
+sub result_ {
+  my $filterEffect = shift;
+
+  return $filterEffect->{result} if exists $filterEffect->{result};
+
+  $filterEffect->{result} = 'result' . $result++;
+
+  return $filterEffect->{result};
+}
 
 #  Add filter effects {
 
@@ -48,6 +60,26 @@ sub gaussianBlur {
   my $self = shift;
 
   my $filterEffect = new feGaussianBlur(@_);
+
+  push @{$self->{effects}}, $filterEffect;
+
+  return $filterEffect;
+}
+
+sub merge {
+  my $self = shift;
+
+  my $filterEffect = new feMerge(@_);
+
+  push @{$self->{effects}}, $filterEffect;
+
+  return $filterEffect;
+}
+
+sub offset {
+  my $self = shift;
+
+  my $filterEffect = new feOffset(@_);
 
   push @{$self->{effects}}, $filterEffect;
 
