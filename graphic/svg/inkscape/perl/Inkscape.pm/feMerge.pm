@@ -10,14 +10,7 @@ sub new {
   $self  -> {id}       = 'feMerge' . $id++;
 
   for my $mergeNode (@_) {
-
-    if ($mergeNode =~ /^fe.*HASH\(/) {
-       push @{$self->{mergeNodes}}, Filter::result_($mergeNode);
-    }
-    else {
-      push @{$self->{mergeNodes}}, $mergeNode;
-    }
-    
+    push @{$self->{mergeNodes}}, Filter::result_($mergeNode);
   }
 
   return $self;

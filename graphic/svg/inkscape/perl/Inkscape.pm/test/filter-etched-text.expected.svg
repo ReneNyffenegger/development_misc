@@ -13,32 +13,40 @@
    height="297mm"
    version="1.1"
    inkscape:version="0.48.2 r9819"
-   sodipodi:docname="filter-bubble-text.svg"
+   sodipodi:docname="filter-etched-text.svg"
    id="what-is-this-id-good-for">
   <defs
      id="defs999">
     <filter
        id="filter1"
        inkscape:label="filter1">
-      <feSpecularLighting
-         id="feSpecularLighting1"
+      <feOffset
+         dx="1"
+         dy="1"
+         id="feOffset1"
+         result="result1" />
+      <feOffset
+         dx="-1"
+         dy="-1"
+         id="feOffset2"
          in="SourceAlpha"
-         lighting-color="rgb(187,187,187)"
-         specularConstant="11.111111111111111"
-         specularExponent="10.912195121951219"
-         kernelUnitLength="10"
-         surfaceScale="5.2356020942407877">
-        <feDistantLight
-           id="feDistantLight3229"
-           azimuth="0" />
-      </feSpecularLighting>
+         result="result0" />
+      <feComposite
+         id="feComposite1"
+         in="result0"
+         in2="result1"
+         operator="out" />
       <feGaussianBlur
          stdDeviation="1"
          id="feGaussianBlur1" />
       <feComposite
-         id="feComposite1"
+         id="feComposite2"
          in2="SourceGraphic"
-         operator="atop" />
+         operator="in" />
+      <feBlend
+         mode="darken"
+         in2="SourceGraphic"
+         id="feBlend1" />
     </filter>
   </defs>
   <sodipodi:namedview
@@ -48,9 +56,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="115"
-     inkscape:cy="910"
+     inkscape:zoom="1.24"
+     inkscape:cx="270"
+     inkscape:cy="860"
      inkscape:document-units="mm"
      inkscape:current-layer="g1"
      showgrid="false"
@@ -77,7 +85,7 @@
      id="g1">
     <text
        xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;filter:url(#filter1);font-family:Verdana;-inkscape-font-specification:Verdana Bold"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#00ff7a;fill-opacity:1;stroke:none;filter:url(#filter1);font-family:Verdana;-inkscape-font-specification:Verdana Bold"
        x="20"
        y="50"
        id="text1"
@@ -85,6 +93,6 @@
          sodipodi:role="line"
          id="tspan1"
          x="20"
-         y="50">Bubble text</tspan></text>
+         y="50">Etched text</tspan></text>
   </g>
 </svg>

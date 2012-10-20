@@ -1,3 +1,5 @@
+use warnings;
+use strict;
 use Inkscape;
 
 my $inkscape = new Inkscape;

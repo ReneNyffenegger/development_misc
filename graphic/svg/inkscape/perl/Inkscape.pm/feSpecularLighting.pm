@@ -5,7 +5,7 @@ package feSpecularLighting;
 my $id = 1;
 sub new {
   my     $self = {};
-  bless  $self;
+  bless  $self, shift;
 
   $self  -> {id}    = 'feSpecularLighting' . $id++;
 

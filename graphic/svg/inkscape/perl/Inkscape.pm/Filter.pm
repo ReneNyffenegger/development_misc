@@ -1,5 +1,6 @@
 package Filter;
 
+use     feBlend;
 use     feComposite;
 use     feGaussianBlur;
 use     feMerge;
@@ -35,16 +36,26 @@ sub write {
 
 my $result=0;
 sub result_ {
-  my $filterEffect = shift;
+  my $effectSource = shift;
 
-  return $filterEffect->{result} if exists $filterEffect->{result};
+  return $effectSource unless $effectSource =~ /^fe.*HASH\(/;
 
-  $filterEffect->{result} = 'result' . $result++;
+  return $effectSource->{result} if exists $effectSource->{result};
 
-  return $filterEffect->{result};
+  $effectSource->{result} = 'result' . $result++;
+
+  return $effectSource->{result};
 }
 
 #  Add filter effects {
+
+sub blend {
+  my $self = shift;
+
+  my $filterEffect = new feBlend(@_);
+
+  push @{$self->{effects}}, $filterEffect;
+}
 
 sub composite {
   my $self = shift;

@@ -12,6 +12,12 @@ sub new {
   $self  -> {dx} =  shift;
   $self  -> {dy} =  shift;
 
+  my %options = @_;
+
+  if (exists $options{in}) {
+     $self -> {in} = $options{in};
+  }
+
   return $self;
 }
 
@@ -24,6 +30,7 @@ sub write {
   print $svgFile "         dx=\"$self->{dx}\"\n";
   print $svgFile "         dy=\"$self->{dy}\"\n";
   print $svgFile "         id=\"$self->{id}\"";
+  print $svgFile "\n         in=\"$self->{in}\"" if exists $self->{in};
   print $svgFile "\n         result=\"$self->{result}\"" if exists $self->{result};
 
   print $svgFile " />\n";

@@ -2,6 +2,8 @@
 #   For a reason unbeknowest to me, the «bubble effect» disappears
 #   as the image is zoomed in.
 #
+use warnings;
+use strict;
 use Inkscape;
 
 my $inkscape = new Inkscape;
@@ -18,7 +20,7 @@ my $filter = $inkscape -> filter;
 
 $filter -> specularLighing;
 $filter -> gaussianBlur;
-$filter -> composite;
+$filter -> composite('atop', in2=>'SourceGraphic');
 
 $text -> applyFilter($filter);
 
