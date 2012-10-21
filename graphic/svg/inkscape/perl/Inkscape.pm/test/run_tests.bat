@@ -14,3 +14,4 @@
 @call t.bat filter-bubble-text
 @call t.bat filter-shadow-text
 @call t.bat filter-etched-text
+@call t.bat rotate-text-10deg
