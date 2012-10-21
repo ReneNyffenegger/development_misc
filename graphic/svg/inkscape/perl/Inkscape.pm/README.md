@@ -14,6 +14,15 @@ compares the produced file with the corresponding `.expected.svg` file.
 
 These tests are run with the [run_test.bat](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/run_test.bat) file.
 
+## Line
+
+[line.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/line.pl) produces a stright line -
+Expected file: [line.expected.svg](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/line.expected.svg) 
+
+[line-zig-zag.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/line-zig-zag.pl) produces zig zag line using
+the Layer's `line_M` method -
+Expected file: [line-zig-zag.expected.svg](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/line-zig-zag.expected.svg) 
+
 ## Rect
 
 

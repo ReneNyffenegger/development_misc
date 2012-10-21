@@ -68,6 +68,33 @@ sub ellipse {
 
 }
 
+sub line_M {
+  my $self      = shift;
+
+# creates a «zig-zag» line. That is: the
+# nodes of the lines are corners.
+# The M in «line_M» stands for the Mof the move to.
+
+  my $path = new Path;
+  $self -> addElem($path);
+
+  my $d = 'M';
+  $path -> {sodipodi_nodetypes} = '';
+  $path -> {inkscape_connector_curvature} = '0';
+
+  while (@_) {
+    my $x = shift;
+    my $y = shift;
+
+    $d .= " $x,$y";
+    $path -> {sodipodi_nodetypes} .= 'c';
+  }
+
+  $path->{d}=$d;
+
+  return $path;
+}
+
 sub line {
   my $self      = shift;
 
@@ -80,15 +107,7 @@ sub line {
   my $xTo       = $xFrom + $xDiff;
   my $yTo       = $yFrom + $yDiff;
 
-  my $path      = new Path;
-  $self -> addElem($path);
-
-  $path -> {d} = "M $xFrom,$yFrom $xTo,$yTo";
-
-  $path -> {inkscape_connector_curvature} = '0';
-  $path -> {sodipodi_nodetypes} = 'cc';
-
-  return $path;
+  return $self -> line_M($xFrom, $yFrom, $xTo, $yTo);
 }
 
 sub rect {
