@@ -8,6 +8,30 @@ sub new {
   my $self = {};
   bless $self, shift;
 
+#
+#       
+#   SVG specifies the following path data commands:
+#  
+#       M: moveto
+#       L: lineto
+#       H: horizontal lineto
+#       V: vertical lineto
+#       C: curveto
+#       S: smooth curveto
+#       Q: quadratic Bézier curve
+#       T: smooth quadratic Bézier curveto
+#       A: elliptical Arc
+#  
+#       Capital letters: absolutely positioned
+#       lower cases:     relatively positioned.
+#
+#   Finally, there is also the
+#       z: closepath
+#  
+#   Inkscape seems to prefer absolutely positioned coordinates. In my (limited) tests, relatively
+#   positioned commands were converted into absolutely positioned coordinates.
+#       
+        
 # Note: order of styles in <path> different from order in <rect>?
   $self -> {style} -> {'fill'}            = 'none'   ;
   $self -> {style} -> {'stroke'}          = '#000000'; # not in <rect>.
