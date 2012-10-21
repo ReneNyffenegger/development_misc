@@ -7,6 +7,7 @@ use G;
 use GradientDefinition;
 use GradientUsage;
 use Filter;
+use Matrix;
 
 sub new {
   my $self = {};
@@ -287,4 +288,27 @@ sub filter {
   return $filter;
 }
 
+# transformations {
+
+sub transformation_ {
+
+  my $elem = shift;
+
+  return if exists $elem->{transformation};
+
+  $elem -> {transformation} = new Matrix;
+}
+
+sub rotate_ {
+
+  my $elem  = shift;
+  my $alpha = shift;
+
+  transformation_($elem);
+  
+  $elem -> {transformation} -> rotate($alpha);
+
+}
+
+# }
 1;

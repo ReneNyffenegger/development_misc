@@ -67,7 +67,11 @@ sub write {
   print $svgFile '  ' x $indent . "   x=\"$self->{x}\"\n";
   print $svgFile '  ' x $indent . "   y=\"$self->{y}\"\n";
   print $svgFile '  ' x $indent . "   id=\"$self->{id}\"\n";
-  print $svgFile '  ' x $indent . "   sodipodi:linespacing=\"" . $self->{style}->{'line-height'} . "\">";
+  print $svgFile '  ' x $indent . "   sodipodi:linespacing=\"" . $self->{style}->{'line-height'} . "\"";
+
+  print $svgFile "\n". '  ' x $indent . "   " . $self->{transformation}->tag if exists $self->{transformation};
+  
+  print $svgFile ">";
 
   my $x = $self->{x};
   my $y = $self->{y};
@@ -99,5 +103,16 @@ sub applyFilter {
 
   Inkscape::applyFilter_($self, $filter, @_);
 }
+
+# Transformations {
+
+sub rotate {
+  my $self  = shift;
+  my $alpha = shift;
+
+  Inkscape::rotate_($self, $alpha);
+}
+
+# }
 
 1;

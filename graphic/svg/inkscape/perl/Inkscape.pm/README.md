@@ -37,3 +37,11 @@ Expected file: [rect.expected.svg](https://raw.github.com/ReneNyffenegger/develo
 
 [cirle-dot.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/ellipse.pl) produces an ellipse as though it had been drawn
 with the arc tool - Expected file: [rect.expected.svg](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/ellipse.expected.svg) 
+
+## Transformation (Matrix)
+
+Uses [Matrix.pm](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/Matrix.pm) to create transformations.
+
+
+[rotate-text-10deg.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/rotate-text-10deg.pl) rotates a text
+10 degrees. - Expected file: [rect.expected.svg](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/rotate-text-10deg.expected.svg) 
