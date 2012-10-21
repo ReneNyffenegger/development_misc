@@ -69,12 +69,22 @@ sub write {
 
   my $styleText = Inkscape::finalStyle_($self);
 
-  print $svgFile '  ' x $indent . "<path\n";
-  print $svgFile '  ' x $indent . "   style=\"$styleText\"\n";
-  print $svgFile '  ' x $indent . "   d=\"$self->{d}\"\n";
-  print $svgFile '  ' x $indent . "   id=\"$self->{id}\"\n";
-  print $svgFile '  ' x $indent . "   inkscape:connector-curvature=\"0\"\n";
-  print $svgFile '  ' x $indent . "   sodipodi:nodetypes=\"cc\" />\n";
+  print $svgFile       '  ' x $indent . "<path";
+  print $svgFile "\n". '  ' x $indent . "   sodipodi:type=\"$self->{sodipodi_type}\"" if exists $self->{sodipodi_type};
+  print $svgFile "\n". '  ' x $indent . "   style=\"$styleText\"";
+
+
+  print $svgFile "\n". '  ' x $indent . "   d=\"$self->{d}\"";
+  print $svgFile "\n". '  ' x $indent . "   id=\"$self->{id}\"";
+
+  print $svgFile "\n". '  ' x $indent . "   sodipodi:cx=\"$self->{sodipodi_cx}\""                                   if exists $self->{sodipodi_cx};
+  print $svgFile "\n". '  ' x $indent . "   sodipodi:cy=\"$self->{sodipodi_cy}\""                                   if exists $self->{sodipodi_cy};
+  print $svgFile "\n". '  ' x $indent . "   sodipodi:rx=\"$self->{sodipodi_rx}\""                                   if exists $self->{sodipodi_rx};
+  print $svgFile "\n". '  ' x $indent . "   sodipodi:ry=\"$self->{sodipodi_ry}\""                                   if exists $self->{sodipodi_ry};
+
+  print $svgFile "\n". '  ' x $indent . "   inkscape:connector-curvature=\"$self->{inkscape_connector_curvature}\"" if exists $self->{inkscape_connector_curvature};
+  print $svgFile "\n". '  ' x $indent . "   sodipodi:nodetypes=\"$self->{sodipodi_nodetypes}\""                     if exists $self->{sodipodi_nodetypes};
+  print $svgFile " />\n";
 }
 
 1;

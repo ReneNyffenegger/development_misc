@@ -39,6 +39,35 @@ sub circle {
   return $circle;
 }
 
+sub ellipse {
+  my $self      = shift;
+
+  my $x         = shift;
+  my $y         = shift;
+
+  my $rx        = shift;
+  my $ry        = shift;
+
+  my $x1  = $x + $rx;
+  my $rx2 = $rx * 2;     
+
+  my $path      = new Path;
+
+  $self -> addElem($path);
+
+  $path -> {d} = "m $x1,$y a $rx,$ry 0 1 1 -$rx2,0 $rx,$ry 0 1 1 $rx2,0 z";
+
+  $path -> {sodipodi_type} = 'arc';
+
+  $path -> {sodipodi_cx} = $x;
+  $path -> {sodipodi_cy} = $y;
+  $path -> {sodipodi_rx} = $rx;
+  $path -> {sodipodi_ry} = $ry;
+
+  return $path;
+
+}
+
 sub line {
   my $self      = shift;
 
@@ -55,6 +84,9 @@ sub line {
   $self -> addElem($path);
 
   $path -> {d} = "M $xFrom,$yFrom $xTo,$yTo";
+
+  $path -> {inkscape_connector_curvature} = '0';
+  $path -> {sodipodi_nodetypes} = 'cc';
 
   return $path;
 }

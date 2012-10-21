@@ -32,3 +32,8 @@ they're also included here:
 
 [cirle-dot.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/cirle-dot.pl) produces a black dot -
 Expected file: [rect.expected.svg](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/cirle-dot.expected.svg) 
+
+## Ellipse
+
+[cirle-dot.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/ellipse.pl) produces an ellipse as though it had been drawn
+with the arc tool - Expected file: [rect.expected.svg](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/ellipse.expected.svg) 
