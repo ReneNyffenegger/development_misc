@@ -49,14 +49,8 @@ sub line {
 
 sub rect {
   my $self      = shift;
- 
-  my $x         = shift;
-  my $y         = shift;
-  my $width     = shift;
-  my $height    = shift;
 
-
-  my $rect      = new Rect($x, $y, $width, $height);
+  my $rect      = new Rect(@_);
   $self -> addElem($rect);
 
   return $rect;
