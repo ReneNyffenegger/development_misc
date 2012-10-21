@@ -22,8 +22,10 @@ sub new {
 
 
   $self -> {valid_styles} = [
-    {name => 'fill'             , optional => 1, default=>'#000000'},
-    {name => 'stroke'           , optional => 1, default=>'none'},
+    {name => 'stroke'           , optional => 0},
+    {name => 'stroke-opacity'   , optional => 0},
+    {name => 'fill'             , optional => 0},
+    {name => 'fill-opacity'     , optional => 0},
   ];
 
   return $self;
