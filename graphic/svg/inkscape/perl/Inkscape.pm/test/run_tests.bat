@@ -15,3 +15,4 @@
 @call t.bat filter-shadow-text
 @call t.bat filter-etched-text
 @call t.bat rotate-text-10deg
+@call t.bat rotate-text-36times
