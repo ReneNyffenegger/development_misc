@@ -14,6 +14,11 @@ sub new {
   $self->{width}      = shift;
   $self->{height}     = shift;
 
+  my %options         = @_;
+
+  $self -> {rx}       = $options{rx} if exists $options{rx};
+  $self -> {ry}       = $options{ry} if exists $options{ry};
+
 # Note: order of styles in <rect> different from order in <line>?
 
 # $self -> {style} -> {'opacity'}            = 1;
@@ -70,13 +75,15 @@ sub write {
 
   my $styleText = Inkscape::finalStyle_($self);
 
-  print $svgFile '  ' x $indent . "<rect\n";
-  print $svgFile '  ' x $indent . "   style=\"$styleText\"\n";
-  print $svgFile '  ' x $indent . "   width=\"$self->{width}\"\n";
-  print $svgFile '  ' x $indent . "   height=\"$self->{height}\"\n";
-  print $svgFile '  ' x $indent . "   x=\"$self->{x}\"\n";
-  print $svgFile '  ' x $indent . "   y=\"$self->{y}\"\n";
-  print $svgFile '  ' x $indent . "   id=\"$self->{id}\" />\n";
+  print $svgFile       '  ' x $indent . "<rect\n";
+  print $svgFile       '  ' x $indent . "   style=\"$styleText\"\n";
+  print $svgFile       '  ' x $indent . "   width=\"$self->{width}\"\n";
+  print $svgFile       '  ' x $indent . "   height=\"$self->{height}\"\n";
+  print $svgFile       '  ' x $indent . "   x=\"$self->{x}\"\n";
+  print $svgFile       '  ' x $indent . "   y=\"$self->{y}\"";
+  print $svgFile "\n". '  ' x $indent . "   rx=\"$self->{rx}\"" if exists $self -> {rx};
+  print $svgFile "\n". '  ' x $indent . "   ry=\"$self->{ry}\"" if exists $self -> {ry};
+  print $svgFile "\n". '  ' x $indent . "   id=\"$self->{id}\" />\n";
 }
 
 1;
