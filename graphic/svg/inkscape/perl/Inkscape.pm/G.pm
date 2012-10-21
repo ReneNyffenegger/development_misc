@@ -1,6 +1,7 @@
 use warnings;
 use strict;
 package G;
+use Circle;
 use Path;
 use Rect;
 use Text;
@@ -25,6 +26,17 @@ sub makeLayer {
   my $name = shift;
 
   $self -> {layerName} = $name;
+}
+
+sub circle {
+
+  my $self      = shift;
+
+  my $circle    = new Circle(@_);
+
+  $self -> addElem($circle);
+
+  return $circle;
 }
 
 sub line {

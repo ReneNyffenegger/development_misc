@@ -4,6 +4,7 @@
 @call t.bat rect
 @call t.bat rect-round-corners
 @call t.bat rect-round-corners-rx-ry
+@call t.bat circle-dot
 @call t.bat group
 @call t.bat text
 @call t.bat rect-stroke-paint

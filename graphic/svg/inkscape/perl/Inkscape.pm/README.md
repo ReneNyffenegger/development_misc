@@ -24,3 +24,11 @@ Expected file: [rect.expected.svg](https://raw.github.com/ReneNyffenegger/develo
 
 [rect-round-corners-rx-ry.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/rect-round-corners-rx-ry.pl) 
 is mostly the same thing as `rect-round-corners`, but uses both attributes, `rx` and `ry` - Expected file: [rect-round-corners.expected.svg](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/rect-round-corners-rx-ry.expected.svg) 
+
+## Circle
+
+Inkscape seems not too comfortable with the svg `<circle>` tags. Probably because they cannot produce ellipses and arcs. But as Inkscape can read `<circle>` tags,
+they're also included here:
+
+[cirle-dot.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/cirle-dot.pl) produces a black dot -
+Expected file: [rect.expected.svg](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/cirle-dot.expected.svg) 
