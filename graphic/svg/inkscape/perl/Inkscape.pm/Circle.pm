@@ -20,6 +20,12 @@ sub new {
   $self->{y} = shift;
   $self->{r} = shift;
 
+
+  $self -> {valid_styles} = [
+    {name => 'fill'             , optional => 1, default=>'#000000'},
+    {name => 'stroke'           , optional => 1, default=>'none'},
+  ];
+
   return $self;
 }
 
@@ -35,6 +41,8 @@ sub write {
   my $self    = shift;
   my $svgFile = shift;
 
+  my $styleText = Inkscape::finalStyle_($self);
+
   print $svgFile "    <circle\n";
   print $svgFile "       id=\"circle1\"\n";
   print $svgFile "       cx=\"$self->{x}\"\n";
@@ -44,7 +52,8 @@ sub write {
   print $svgFile "       sodipodi:cy=\"$self->{y}\"\n";
   print $svgFile "       sodipodi:rx=\"$self->{r}\"\n";
   print $svgFile "       sodipodi:ry=\"$self->{r}\"\n";
-  print $svgFile "       style=\"stroke:#880000;stroke-opacity:1;fill:#00d400;fill-opacity:1\" />\n";
+# print $svgFile "       style=\"stroke:#880000;stroke-opacity:1;fill:#00d400;fill-opacity:1\" />\n";
+  print $svgFile "       style=\"$styleText\" />\n";
 }
 
 1;
