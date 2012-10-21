@@ -113,6 +113,17 @@ sub rotate {
   Inkscape::rotate_($self, $alpha);
 }
 
+sub translate {
+
+# TODO: this sub should be named 'move'
+
+  my $self  = shift;
+  my $dX    = shift;
+  my $dY    = shift;
+
+  Inkscape::translate_($self, $dX, $dY);
+}
+
 # }
 
 1;

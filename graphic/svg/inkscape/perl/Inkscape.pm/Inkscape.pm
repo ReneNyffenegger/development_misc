@@ -184,6 +184,8 @@ ABC
   }
 
   print $svgFile "</svg>\n";
+
+  close $svgFile;
 }
 
 sub style_ {
@@ -300,15 +302,25 @@ sub transformation_ {
 }
 
 sub rotate_ {
-
   my $elem  = shift;
   my $alpha = shift;
 
   transformation_($elem);
   
   $elem -> {transformation} -> rotate($alpha);
+}
 
+sub translate_ {
+#   TODO: this sub should be named 'move_'.
+  my $elem  = shift;
+  my $dX    = shift;
+  my $dY    = shift;
+
+  transformation_($elem);
+  
+  $elem -> {transformation} -> translate($dX, $dY);
 }
 
 # }
+
 1;

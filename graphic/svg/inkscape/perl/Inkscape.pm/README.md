@@ -44,8 +44,15 @@ Uses [Matrix.pm](https://raw.github.com/ReneNyffenegger/development_misc/master/
 
 
 [rotate-text-10deg.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/rotate-text-10deg.pl) rotates a text
-10 degrees. - Expected file: [rect.expected.svg](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/rotate-text-10deg.expected.svg) 
+10 degrees. - Expected file: [rotate-text-10deg.expected.svg](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/rotate-text-10deg.expected.svg) 
 
 [rotate-text-36times.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/rotate-text-36times.pl) is similar to
 `rotate-text-10deg`, but it creates 36 texts, each rotated 10 degrees more than the previous one
-10 degrees. - Expected file: [rect.expected.svg](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/rotate-text-36times.expected.svg) 
+10 degrees. - Expected file: [rotate-text-36times.expected.svg](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/rotate-text-36times.expected.svg) 
+
+[rotate-translate-text-36times.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/rotate-translate-text-36times.pl) and
+[translate-rotate-text-36times.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/translate-rotate-text-36times.pl) both
+translate (move) and rotate a text 36 times, but in different orders, thus producing different output (because order matters for matrix multiplications).
+Expected files: 
+[rotate-translate-text36times.expected.svg](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/rotate-translate-text-36times.expected.svg) and
+[translate-rotate-text36times.expected.svg](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/translate-rotate-text-36times.expected.svg).

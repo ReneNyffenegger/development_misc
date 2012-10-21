@@ -16,3 +16,6 @@
 @call t.bat filter-etched-text
 @call t.bat rotate-text-10deg
 @call t.bat rotate-text-36times
+
+@call t.bat rotate-translate-text-36times
+@call t.bat translate-rotate-text-36times
