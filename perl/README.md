@@ -6,3 +6,4 @@ The following installs `Date::Manip`
 
     perl -MCPAN  -e shell
     install Date::Manip
+    exit
