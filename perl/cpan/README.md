@@ -12,3 +12,7 @@
 #Time
 
 ##Time::Local
+
+Exports (among others) `timelocal` which is sort of the inverse of `localtime`.
+
+See [Local.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Time/Local.pl).

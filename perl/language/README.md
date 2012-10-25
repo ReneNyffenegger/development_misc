@@ -1,5 +1,10 @@
 #functions
 
+##localtime
+
+See also `Time::Local` [Local.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Time/Local.pl) which does sort of
+the inverse.
+
 ##time
 
 Returns the number of non-leap seconds since the the epoch, on many systems this is *January 1st 1970*.
