@@ -8,3 +8,7 @@
 ##Date::Manip
 
 [Manip.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Date/Manip.pl). 
+
+#Time
+
+##Time::Local
