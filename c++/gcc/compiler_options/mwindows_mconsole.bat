@@ -35,3 +35,9 @@
 @gcc -mconsole mwindows_mconsole.c -DENTRY="int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)" -lgdi32 -o mconsole-WinMain.exe
 @gcc -mconsole mwindows_mconsole.c -DENTRY="int main()"                                                                                      -lgdi32 -o mconsole-main.exe
 
+@rem
+@rem  See also 
+@rem    https://github.com/ReneNyffenegger/development_misc/tree/master/windows/captureStdOutErr#readme
+@rem  for a solution on how to capture strings printed with 
+@rem  printf from an application compiled with -mwindows.
+@rem
