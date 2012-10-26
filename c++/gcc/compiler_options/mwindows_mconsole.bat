@@ -6,6 +6,8 @@
 @rem  Both can be started from explorer and cmd.exe (and don't
 @rem  seem to exhibit different behaviour from each other).
 @rem
+@rem  Note: the output of printf() is somehow swallowed.
+@rem
 @rem
 @gcc -mwindows mwindows_mconsole.c -DENTRY="int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)" -o mwindows-WinMain.exe
 @gcc -mwindows mwindows_mconsole.c -DENTRY="int main()"                                                                                      -o mwindows-main.exe
@@ -27,6 +29,8 @@
 @rem  the started Windos Application is closed.
 @rem  Also, when started from explorer, an extra »console
 @rem  window« is opened.
+@rem  The output of printf() is not swallowed (this is
+@rem  probably the reason for the extra console window).
 @rem
 @gcc -mconsole mwindows_mconsole.c -DENTRY="int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)" -lgdi32 -o mconsole-WinMain.exe
 @gcc -mconsole mwindows_mconsole.c -DENTRY="int main()"                                                                                      -lgdi32 -o mconsole-main.exe

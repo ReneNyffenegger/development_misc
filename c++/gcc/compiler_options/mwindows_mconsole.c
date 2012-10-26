@@ -2,6 +2,7 @@
 //  Cf https://github.com/ReneNyffenegger/development_misc/blob/master/windows/api/HelloWorld.cpp
 //
 #include <windows.h>
+#include <stdio.h>
 
 LRESULT CALLBACK WndProc(
     HWND   hWnd,
@@ -9,7 +10,9 @@ LRESULT CALLBACK WndProc(
     WPARAM wParam,
     LPARAM lParam ) {
 
-  switch( msg ) {
+  printf("Message: %i\n", msg);
+
+  switch (msg) {
     case WM_PAINT: {
       PAINTSTRUCT ps;
       HDC hDC = BeginPaint(hWnd, &ps);
