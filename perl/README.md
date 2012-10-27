@@ -17,3 +17,7 @@ The following installs `Date::Manip`
     perl -MCPAN  -e shell
     install Date::Manip
     exit
+
+##What make program was used to configure and build Perl?
+
+    perl -V:make
