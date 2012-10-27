@@ -1,3 +1,10 @@
+#File
+
+##File::Path
+
+[rmtree.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/File/Path/rmtree.pl) demonstrates how to use rmtree to
+remove a directory.
+
 #Term
 
 [ANSIColor01.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Term/ANSIColor.01.pl) and
