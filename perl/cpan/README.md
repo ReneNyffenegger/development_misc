@@ -79,3 +79,8 @@ See [Local.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/pe
 #Win32
 
 [GetShortPathName.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Win32/GetShortPathName.pl)
+
+#XML
+
+[first.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/XML/Parser/first.pl) reads and parses
+[first.xml](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/XML/Parser/first.xml).

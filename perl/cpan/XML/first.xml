@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root-node>
+  <node-1 attribute-1='attribute one value'>Hello</node-1>
+  <node-2/>
+  <node-3 attribute-3='attribute three value'/>
+  <node-4 attribute-4a='attribute four a'
+          attribute-4b='attribute four b'>Something new
+  </node-4>
+         
+</root-node>
