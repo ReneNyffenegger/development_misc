@@ -6,10 +6,28 @@
 
 #File
 
+##File::Copy
+
+[Copy.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/File/Copy/Copy.pl)
+
 ##File::Path
 
 [rmtree.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/File/Path/rmtree.pl) demonstrates how to use rmtree to
 remove a directory.
+
+##File::Slurp
+
+[Slurp.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/File/Slurp/Slurp.pl)
+
+[Slurp_binmode.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/File/Slurp/Slurp_binmode.pl)
+
+##File::Spec
+
+[Spec.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/File/Spec/Spec.pl)
+
+##File::Temp
+
+[Temp.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/File/Temp/Temp.pl)
 
 #Getopt
 
