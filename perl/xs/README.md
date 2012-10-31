@@ -6,7 +6,7 @@ I tried to reduce it to the bare minimum.
 
 On Windows:
 
-    perl Makefile.pl
+    perl Makefile.PL
     dmake
 
     perl test.pl
@@ -53,7 +53,7 @@ The [Ex4.xs](https://raw.github.com/ReneNyffenegger/development_misc/master/perl
 
     #include "add.h"
 
-[Makefile.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/xs/Example4/Makefile.pl) now passes
+[Makefile.PL](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/xs/Example4/Makefile.PL) now passes
 
     OBJECT            => '$(O_FILES)'
 
