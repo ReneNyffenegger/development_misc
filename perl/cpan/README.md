@@ -75,3 +75,7 @@ See [Local.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/pe
 #utf8
 
 [is_utf8.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/utf8/is_utf8.pl)
+
+#Win32
+
+[GetShortPathName.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Win32/GetShortPathName.pl)
