@@ -39,3 +39,7 @@ The interesting piece is in [Ex2.xs](https://raw.github.com/ReneNyffenegger/deve
     use Ex2;
     print "2.2 + 3.3 + 4.4 = " . Ex2::add(2.2, 3.3, 4.4) . "\n";
 
+#Example3
+
+[Ex3.xs](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/xs/Example3/Ex3.xs) has the `OUTPUT:` section so that parameters can be *in-out* parameters.
+
