@@ -70,3 +70,8 @@ Exports (among others) `timelocal` which is sort of the inverse of
 [localtime](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/language/functions/localtime.pl).
 
 See [Local.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Time/Local.pl).
+
+
+#utf8
+
+[is_utf8.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/utf8/is_utf8.pl)
