@@ -43,3 +43,21 @@ The interesting piece is in [Ex2.xs](https://raw.github.com/ReneNyffenegger/deve
 
 [Ex3.xs](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/xs/Example3/Ex3.xs) has the `OUTPUT:` section so that parameters can be *in-out* parameters.
 
+
+#Example4
+
+Call the function `add` (declared in [add.h](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/xs/Example4/add.h) and defined in
+[add.c](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/xs/Example4/add.c)).
+
+The [Ex4.xs](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/xs/Example4/Ex4.xs) now has a
+
+    #include "add.h"
+
+[Makefile.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/xs/Example4/Makefile.pl) now passes
+
+    OBJECT            => '$(O_FILES)'
+
+to `WriteMakefile`.
+
+
+
