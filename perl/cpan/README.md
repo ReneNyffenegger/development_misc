@@ -1,3 +1,9 @@
+#Date
+
+##Date::Manip
+
+[Manip.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Date/Manip.pl). 
+
 #Encode
 
 [from_utf8_to_latin1.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/File/Encode/from_utf8_to_latin1.pl)
@@ -44,17 +50,17 @@ remove a directory.
 
 [unnamed_parameter.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Getopt/Long/unnamed_parameter.pl)
 
+#MP3
+
+##MP3::Tag
+
+[Tag.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/MP3/Tag/Tag.pl)
 
 #Term
 
 [ANSIColor01.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Term/ANSIColor.01.pl) and
 [ANSIColor02.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Term/ANSIColor.02.pl). 
 
-#Date
-
-##Date::Manip
-
-[Manip.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Date/Manip.pl). 
 
 #Time
 
