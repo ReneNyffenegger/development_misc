@@ -21,3 +21,21 @@ As I was unable to create running `t/test.t`, I just created the regular perl sc
     func()
       CODE:
         printf("Ex1::func is called!\n");
+
+
+#Example2
+
+The interesting piece is in [Ex2.xs](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/xs/Example2/Ex2.xs). It defines the function `add`: 
+
+    double 
+    add(double d1, double d2, double d3)
+      CODE:
+        RETVAL = d1 + d2 + d3;
+      OUTPUT:
+        RETVAL
+
+`add` is used by [use_Ex2.xs](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/xs/Example2/use_Ex2.xs):
+
+    use Ex2;
+    print "2.2 + 3.3 + 4.4 = " . Ex2::add(2.2, 3.3, 4.4) . "\n";
+
