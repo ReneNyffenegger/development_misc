@@ -60,6 +60,12 @@ remove a directory.
 
 [Tag.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/MP3/Tag/Tag.pl)
 
+#Scalar
+
+##Scalar::Util
+
+[blessed.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Scalar/Util/blessed.pl)
+
 #Term
 
 [ANSIColor01.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Term/ANSIColor.01.pl) and
