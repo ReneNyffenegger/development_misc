@@ -83,6 +83,8 @@ See [Local.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/pe
 
 #UNIVERSAL
 
+`UNIVERSAL` is the *base class* for all classes (or packages).
+
 [useClass.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/UNIVERSAL/useClass.pl) demonstrates that 
 [Class.pm](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/UNIVERSAL/Class.pm) is inherited from UNIVERSAL and
 that UNIVERSAL provides the four methods `can`, `DOES`, `isa` and `VERSION`.
