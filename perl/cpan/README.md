@@ -81,6 +81,12 @@ Exports (among others) `timelocal` which is sort of the inverse of
 
 See [Local.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Time/Local.pl).
 
+#UNIVERSAL
+
+[useClass.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/UNIVERSAL/useClass.pl) demonstrates that 
+[Class.pm](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/UNIVERSAL/Class.pm) is inherited from UNIVERSAL and
+that UNIVERSAL provides the four methods `can`, `DOES`, `isa` and `VERSION`.
+
 
 #utf8
 
