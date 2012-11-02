@@ -1,6 +1,8 @@
 use warnings;
 use strict;
 
+use feature 'say';
+
 use Config;
 
 #     Textual summary of major perl configuration
@@ -15,4 +17,5 @@ print '-' x 80, "\n";
 # print '-' x 80, "\n";
 
 
-print $Config{'libpth'};
+say "libpth:   ", $Config{'libpth'};
+say "path_sep: ", $Config{'path_sep'};
