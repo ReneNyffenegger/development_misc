@@ -18,6 +18,12 @@ The following installs `Date::Manip`
     install Date::Manip
     exit
 
-##What make program was used to configure and build Perl?
+##-V:
+
+What make program was used to configure and build Perl:
 
     perl -V:make
+
+The installation directories:
+
+    perl -V:install.*

@@ -61,3 +61,6 @@ to `WriteMakefile`.
 
 
 
+---------------
+
+See also: http://www.perlmonks.org/?node_id=853194
