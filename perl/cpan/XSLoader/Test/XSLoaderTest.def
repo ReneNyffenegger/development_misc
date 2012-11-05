@@ -1,0 +1,3 @@
+EXPORTS
+  boot_theDesired
+  _boot_theDesired = boot_theDesired
