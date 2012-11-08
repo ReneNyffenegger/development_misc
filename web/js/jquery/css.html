@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>.css()</title>
+
+  <script type='text/javascript' src='http://code.jquery.com/jquery-latest.min.js'></script>
+
+  <script type="text/javascript">
+
+    $(document).ready ( function(){
+
+         $('#out').css('width' , '100px');
+         $('#out').css('height', '100px');
+         $('#out').css('border', '1px solid black');
+
+         $('#red'  ).click(function(){ $('#out').css('background-color','#f00'); });
+         $('#blue' ).click(function(){ $('#out').css('background-color','#00f'); });
+         $('#green').click(function(){ $('#out').css('background-color','#0f0'); });
+    });
+
+  </script>
+</head>
+
+<body>
+
+  <form action='javascript:void()'>
+  
+    <input type="submit" value="red"   id="red"   /> 
+    <input type="submit" value="green" id="green" /> 
+    <input type="submit" value="blue"  id="blue"  /> 
+  
+    <div id='out' />
+  </form>
+
+</body>
+</html> 

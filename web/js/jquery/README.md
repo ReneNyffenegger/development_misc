@@ -1,3 +1,8 @@
+# css.html
+
+[css.html](https://raw.github.com/ReneNyffenegger/development_misc/master/web/js/jquery/css.html) sets 
+[css properties](https://github.com/ReneNyffenegger/development_misc/tree/master/web/css/properties#readme) with `.css()`.
+
 # ready.html
 
 The arguably most basic jquery script:
