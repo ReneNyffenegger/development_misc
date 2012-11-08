@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>borders (CSS)</title>
+
+   <style type='text/css'> 
+	    body {margin:30px}
+
+      .red::selection        {background:#f30; color:#0ac;}
+      .green::selection      {background:#2f5; color:#32c;}
+
+      .red::-moz-selection   {background:#f30; color:#0ac;}
+      .green::-moz-selection {background:#2f5; color:#32c;}
+
+   </style>
+
+</head>
+
+
+<body>
+    
+   <div class='red'  > selection will be red   </div>
+   <div class='green'> selection will be green </div>
+
+</body>
+</html>
