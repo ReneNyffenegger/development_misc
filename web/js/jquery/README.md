@@ -69,3 +69,8 @@ Further keywords: click()
 #append_01.html
 
 [append_01.html](https://raw.github.com/ReneNyffenegger/development_misc/master/web/js/jquery/append_01.html) demonstrates [.append()](http://api.jquery.com/append/): the function `createGrid` accepts the three parameters `numberOfRows`, `numberOfColumns` and `cellLength` and creates an according grid in the `<div id='container'></div>`.
+
+---------------
+
+    git clone git://github.com/jquery/jquery.git
+
