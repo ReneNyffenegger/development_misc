@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/html4/loose.dtd'>
+<html>
+<head>
+  <title>Mouse Coordinates</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+  <style type='text/css'>
+    * {font-family:Verdana}
+  </style>
+
+  <script type='text/javascript'>
+
+  function out(n, txt) {
+    document.getElementById(n).value = txt;
+  }
+
+  function getMouseCoordinate(e, xy) {
+
+    if (document.all) { e = event; } 
+
+    if (window.Event) {
+      return e['page'+xy];
+    }
+
+
+    var top_left = xy == 'X' ? 'Left' : 'Top';
+
+    if (document.documentElement['scroll' + top_left]) {
+        return e['client' + xy] + document.documentElement['scroll' + top_left];
+    }
+    else {
+        return e['client' + xy] + document.body['scroll' + top_left];
+    }
+           
+
+  }
+
+  function mouse_move(e) {
+    out('x', getMouseCoordinate(e, 'X'));
+    out('y', getMouseCoordinate(e, 'Y'));
+  }
+
+  function init() {
+
+    if (window.Event) {
+      out('window_event', 'window.Event: yes (Firefox?)');
+    }
+    else {
+      out('window_event', 'window.Event: no (IE?)');
+    }
+
+    document.onmousemove=mouse_move;
+
+  }
+
+  </script>
+
+</head>
+<body onload='init()'>
+ 
+  <form action=''>
+
+  <input type='text' id='window_event' size='100'><br>
+
+  <input type='text' id='x'>
+  <input type='text' id='y'>
+
+</form>
+
+</body>
+</html>
