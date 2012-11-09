@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- 
+
+       http://stackoverflow.com/questions/1664140/js-function-to-calculate-complementary-colour 
+  
+-->
+<html>
+<head><title>Test 02</title>
+
+	<script type='text/javascript' src="../../web/js/jquery/jquery.js"></script>
+  <script type='text/javascript'>
+
+
+  function rgb2hex(rgb) {
+    var str;
+    var u;
+    u = rgb.r << 16 | rgb.g << 8 | rgb.b;
+
+    str = "000000" + u.toString(16).toUpperCase();
+    return "#" + str.substr(str.length - 6);
+  };
+
+
+//rgb2hsv and hsv2rgb are based on Color Match Remix [http://color.twysted.net/]
+//which is based on or copied from ColorMatch 5K [http://colormatch.dk/]
+  function rgb2hsv(rgb) {
+    var hsv = new Object();
+
+    var max=max3(rgb.r,rgb.g,rgb.b);
+
+    var dif=max-min3(rgb.r,rgb.g,rgb.b);
+
+    hsv.saturation=(max==0.0)?0:(100*dif/max);
+
+    if (hsv.saturation==0) hsv.hue=0;
+    else if (rgb.r==max) hsv.hue=60.0*(rgb.g-rgb.b)/dif;
+    else if (rgb.g==max) hsv.hue=120.0+60.0*(rgb.b-rgb.r)/dif;
+    else if (rgb.b==max) hsv.hue=240.0+60.0*(rgb.r-rgb.g)/dif;
+
+    if (hsv.hue<0.0) {
+      hsv.hue+=360.0;
+    }
+    
+    hsv.value     =Math.round(max*100/255);
+    hsv.hue       =Math.round(hsv.hue);
+    hsv.saturation=Math.round(hsv.saturation);
+
+    return hsv;
+  }
+
+  function hsv2rgb(hsv_) {
+
+    var rgb=new Object();
+
+    var hsv = new Object();
+
+    hsv.hue         = hsv_.hue;
+    hsv.saturation  = hsv_.saturation;
+    hsv.value       = hsv_.value;
+
+    if (hsv.saturation==0) {
+    	rgb.r=rgb.g=rgb.b=Math.round(hsv.value*2.55);
+    } 
+    else {
+
+    	hsv.hue       /= 60;
+    	hsv.saturation/=100;
+    	hsv.value     /=100;
+
+    	i=Math.floor(hsv.hue);
+    	f=hsv.hue-i;
+
+    	p=hsv.value*(1-hsv.saturation);
+    	q=hsv.value*(1-hsv.saturation*f);
+    	t=hsv.value*(1-hsv.saturation*(1-f));
+
+    	switch(i) {
+    	  case  0: rgb.r=hsv.value; rgb.g=t        ; rgb.b=p        ; break;
+    	  case  1: rgb.r=q        ; rgb.g=hsv.value; rgb.b=p        ; break;
+    	  case  2: rgb.r=p        ; rgb.g=hsv.value; rgb.b=t        ; break;
+    	  case  3: rgb.r=p        ; rgb.g=q        ; rgb.b=hsv.value; break;
+    	  case  4: rgb.r=t        ; rgb.g=p        ; rgb.b=hsv.value; break;
+    	  default: rgb.r=hsv.value; rgb.g=p        ; rgb.b=q        ;
+    	}
+
+    	rgb.r=Math.round(rgb.r*255);
+    	rgb.g=Math.round(rgb.g*255);
+    	rgb.b=Math.round(rgb.b*255);
+    }
+    return rgb;
+  }
+
+  function HueShift(h,s) { 
+    h+=s; 
+
+    while (h>=360.0) h-=360.0; while (h<0.0) h+=360.0; return h; 
+  }
+
+  function min3(a,b,c) { 
+    return (a<b) ? ( (a<c) ? a:c) :
+                   ( (b<c) ? b:c) ; 
+  } 
+  
+  function max3(a,b,c) { 
+    return (a>b) ? ( (a>c) ? a:c) :
+                   ( (b>c) ? b:c) ; 
+  } 
+
+  var g_hsv;
+  function animate() {
+       var h_new  = HueShift(g_hsv.hue, 1);
+
+       g_hsv.hue = h_new;
+
+       var hsv_opposite = new Object();
+
+       var h_opposite  = HueShift(g_hsv.hue, 180);
+
+       hsv_opposite.hue        = h_opposite;
+       hsv_opposite.saturation = g_hsv.saturation;
+       hsv_opposite.value      = g_hsv.value;
+
+       $('#box'            ).css('background-color', rgb2hex(hsv2rgb(g_hsv       ) ) );
+       $('#box-opposite'   ).css('background-color', rgb2hex(hsv2rgb(hsv_opposite) ) );
+
+       $('#box'            ).css('color'           , rgb2hex(hsv2rgb(hsv_opposite) ) );
+       $('#box-opposite'   ).css('color'           , rgb2hex(hsv2rgb(g_hsv       ) ) );
+
+       $('#box'            ).html(                   rgb2hex(hsv2rgb(g_hsv       ) ) );
+       $('#box-opposite'   ).html(                   rgb2hex(hsv2rgb(hsv_opposite) ) );
+
+       setTimeout(animate,10);
+
+     }
+
+  function init() {
+
+        var rgb = new Object();
+
+        rgb.r =   0;
+        rgb.g = 200;
+        rgb.b =  40;
+
+        g_hsv   = rgb2hsv(rgb);
+
+        animate();
+   }
+
+  </script>
+
+</head>
+
+<body onLoad='init()'></body>
+
+   <div id='box'          style='border:1px solid black;width:100px;height:100px'></div>
+   <div id='box-opposite' style='border:1px solid black;width:100px;height:100px'></div>
+
+</html>
