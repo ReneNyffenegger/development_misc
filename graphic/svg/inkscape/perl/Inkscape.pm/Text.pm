@@ -1,3 +1,5 @@
+use warnings;
+use strict;
 package Text;
 
 my $id = 1;
@@ -84,7 +86,12 @@ sub write {
     print $svgFile '  ' x $indent . "     x=\"$x\"\n";
     print $svgFile '  ' x $indent . "     y=\"$y\">" . $textLine . "</tspan>";
 
-    $y += int ($self->{style}->{'font-size'} * int($self->{style}->{'line-height'})/100);
+  # Remove 'px' and '%' from "font-size" and "line-height" so 
+  # that the mathematical += can be used:
+    my ($fontSizeWithoutPX      ) = ($self->{style}->{'font-size'  } =~ /(\d+)px/);
+    my ($lineHeihtWithoutPercent) = ($self->{style}->{'line-height'} =~ /(\d+)\%/);
+
+    $y += $fontSizeWithoutPX * $lineHeihtWithoutPercent/100;
   }
 
   print $svgFile "</text>\n";
