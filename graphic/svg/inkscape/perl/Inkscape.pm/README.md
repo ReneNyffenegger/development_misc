@@ -23,6 +23,12 @@ Expected file: [line.expected.svg](https://raw.github.com/ReneNyffenegger/develo
 the Layer's `line_M` method -
 Expected file: [line-zig-zag.expected.svg](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/line-zig-zag.expected.svg) 
 
+# Conversion
+
+[convers.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/conversion.pl) converts the sizes in millimeters of
+an A0 sheet to its corresponding pixel units. Uses [Conversion.pm](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/Conversion.pm) -
+Expected file: [conversion.expected.svg](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/conversion.expected.svg) 
+
 ## Rect
 
 
