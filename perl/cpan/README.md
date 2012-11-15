@@ -77,6 +77,16 @@ remove a directory.
 [ANSIColor01.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Term/ANSIColor.01.pl) and
 [ANSIColor02.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Term/ANSIColor.02.pl). 
 
+#Tie
+
+##Tie::File
+
+Modify files through an array.
+
+[01_create_file.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Tie/File/01_create_file.pl),
+[02_insert_file.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Tie/File/02_insert_lines.pl),
+[03_modify_lines.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Tie/File/03_modify_lines.pl) and
+[04_remove_line.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Tie/File/04_remove_line.pl).
 
 #Time
 
