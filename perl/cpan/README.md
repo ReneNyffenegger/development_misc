@@ -88,6 +88,9 @@ Modify files through an array.
 [03_modify_lines.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Tie/File/03_modify_lines.pl) and
 [04_remove_line.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Tie/File/04_remove_line.pl).
 
+[05_copy_array.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Tie/File/05_copy_array.pl) shows that the tied magic
+is not copied to another array.
+
 #Time
 
 ##Time::Local
