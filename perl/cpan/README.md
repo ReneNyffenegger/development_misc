@@ -2,6 +2,12 @@
 
 [run.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Config/run.pl).
 
+#Data
+
+##Data::Compare
+
+[run.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Data/Compare/run.pl).
+
 #Date
 
 ##Date::Manip
