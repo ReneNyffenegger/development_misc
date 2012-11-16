@@ -8,6 +8,8 @@
 
 [run.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Data/Compare/run.pl).
 
+See also [List::Compare](https://github.com/ReneNyffenegger/development_misc/tree/master/perl/cpan/List/Compare).
+
 #Date
 
 ##Date::Manip
@@ -59,6 +61,18 @@ remove a directory.
 [no_values.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Getopt/Long/no_values.pl)
 
 [unnamed_parameter.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Getopt/Long/unnamed_parameter.pl)
+
+#List
+
+##List::Compare
+
+[get_symmetric_difference.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/List/Compare/get_symmetric_difference.pl)
+
+See also [Data::Compare](https://github.com/ReneNyffenegger/development_misc/tree/master/perl/cpan/Data/Compare)
+
+##List::Maker
+
+[run.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/List/Maker/run.pl)
 
 #MP3
 
