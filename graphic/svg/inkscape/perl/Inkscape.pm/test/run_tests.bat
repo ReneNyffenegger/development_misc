@@ -3,6 +3,7 @@
 @call t.bat line
 @call t.bat conversion
 @call t.bat line-zig-zag
+@call t.bat line-smooth-nodes
 @call t.bat rect
 @call t.bat rect-round-corners
 @call t.bat rect-round-corners-rx-ry

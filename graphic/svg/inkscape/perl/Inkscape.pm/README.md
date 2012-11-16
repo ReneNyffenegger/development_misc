@@ -23,6 +23,14 @@ Expected file: [line.expected.svg](https://raw.github.com/ReneNyffenegger/develo
 the Layer's `line_M` method -
 Expected file: [line-zig-zag.expected.svg](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/line-zig-zag.expected.svg) 
 
+[line-smooth-nodes.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/line-smooth-nodes.pl)
+creates a line with «smooth» edges. That is, as though a line would have been drawn with the Shift+F6 tool («*Draw Bezier curves and straight lines*») and then each node (except the
+first and the last one) would have made smooth
+(F2, then «*make selected node smooth*»).
+
+the Layer's `line_M` method -
+Expected file: [line-zig-zag.expected.svg](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/line-zig-zag.expected.svg) 
+
 # Conversion
 
 [convers.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/graphic/svg/inkscape/perl/Inkscape.pm/test/conversion.pl) converts the sizes in millimeters of
