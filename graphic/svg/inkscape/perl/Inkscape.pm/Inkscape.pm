@@ -23,6 +23,7 @@ sub new {
   return $self;
 }
 
+
 sub width_height {
   my $self      = shift;
 
@@ -141,6 +142,10 @@ EFG
     print $svgFile "  <defs\n";
     print $svgFile "     id=\"defs999\" />\n";
   }
+
+  $self -> {cx}   = 0 unless defined $self->{cx};
+  $self -> {cy}   = 0 unless defined $self->{cy};
+  $self -> {zoom} = 1 unless defined $self->{zoom};
 
 print $svgFile <<"EFG";
   <sodipodi:namedview
