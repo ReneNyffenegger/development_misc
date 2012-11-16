@@ -82,7 +82,7 @@ sub tag {
   my $self = shift;
 
   #
-  # Return sthe matrix rounded to 8 digits after the decimal seperator
+  # Return the matrix rounded to 8 digits after the decimal seperator
   # as a tag.
   # %0.8f seemd not really useful as this would have printed 8 digits
   # after the seperator for integers as well, so the following
@@ -90,9 +90,11 @@ sub tag {
   # Probably, it can be optimized, but I don't have access to the
   # internet where I am right now and cannot ask stackoverflow.com
   #
+  # TODO: Such a function should be centralized, see also 
+  # G::output_number and G::line_smooth_nodes.
+  #
   return sprintf "transform=\"matrix(%s,%s,%s,%s,%s,%s)\"",
     map {int ($_ * 10e7 + 0.5) / 10e7} ($self->{m00},$self->{m10},$self->{m01},$self->{m11},$self->{m02},$self->{m12});
 }
-
 
 1;
