@@ -1,6 +1,7 @@
 @set PERL5LIB=..
 
 @call t.bat line
+@call t.bat conversion
 @call t.bat line-zig-zag
 @call t.bat rect
 @call t.bat rect-round-corners
