@@ -22,12 +22,31 @@
 '
 ' ----------------------------------------------------------------------------
 '
+'   English
+'   -------
+'
+'      If the error 
+'
+'          Programmatic access to Visual Basic Project is not trusted
+'         (Code: 800A03EC)
+'
+'      is thrown, access should be allowed like so:
+'
+'          (Excel,...)                                               -> 
+'           Options                                                  -> 
+'           Trust Center                                             ->
+'           Trust Center Settings (Button)                           ->
+'           Macro Settings                                           ->
+'           Trust access to the VBA project object model (check box)
+'
 '   German:
+'   -------
 '     Bei der Fehlermeldung
+'
 '        Microsoft Word: Dem programmatischen Zugriff auf das Visual Basic-Projekt wird nicht vertraut.
-'     sollte auf dem Office Button in (zB) Word auf 
-'        (Word-)Optionen gegangen werden -> Vertrauensstellungscenter -> Einstellungen für Vertrauensstellungscenter -> Einstellungen für Makros -> Zugriff auf das VBA-Projektobjektmodell vertrauen
-'     gemacht werden.
+'
+'     sollte auf dem Office Button (Einstellungen) in (zB) Word auf 
+'
 '   sollte auf dem Office Button in (zB) Word auf
 '      (Word-)Optionen gegangen werden              -> 
 '       Vertrauensstellungscenter                   -> 
