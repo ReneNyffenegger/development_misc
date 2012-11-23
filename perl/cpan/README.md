@@ -24,9 +24,9 @@ See also [List::Compare](https://github.com/ReneNyffenegger/development_misc/tre
 [01_table.sql](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/DBD/Oracle/ref_cursor/01_table.sql) to create a table and
 [02_function.sql](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/DBD/Oracle/ref_cursor/02_function.sql) to create a function that
 selects from the table via a *ref cursor* that the function returns.
-[03_perl.sql](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/DBD/Oracle/ref_cursor/03_perl.sql) has an anonymous block that
+[03_perl.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/DBD/Oracle/ref_cursor/03_perl.pl) has an anonymous block that
 uses the function to get the ref cursor.
-[04_perl.sql](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/DBD/Oracle/ref_cursor/04_perl.sql) does basically the same thing, but
+[04_perl.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/DBD/Oracle/ref_cursor/04_perl.pl) does basically the same thing, but
 without the function.
 
 
