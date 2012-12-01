@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<title>Event: KeyDown and KeyUp</title>
+
+<script type="text/JavaScript">
+<!--
+
+function print_out(txt, e) {
+
+  if (!e) {
+    e = window.event;
+  }
+
+  var k
+  if (e.which) {
+    k = e.which
+  }
+  else {
+    k = e.keyCode
+  }
+
+  document.getElementById('out').innerHTML += txt + ": " + k + "<br>"
+}
+
+document.onkeydown = function(e) { print_out('Key Down', e); }
+document.onkeyup   = function(e) { print_out('Key Up'  , e); }
+
+//-->
+
+</script>
+</head>
+<body>
+
+  <div id='out'></div>
+
+</body>
+</html>

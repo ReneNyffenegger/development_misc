@@ -49,7 +49,7 @@ sub ellipse {
   my $ry        = shift;
 
   my $x1  = $x + $rx;
-  my $rx2 = $rx * 2;     
+  my $rx2 = $rx * 2;
 
   my $path      = new Path;
 
@@ -93,6 +93,132 @@ sub line_M {
   $path->{d}=$d;
 
   return $path;
+}
+
+sub line_smooth_nodes {
+
+  #  This procedure should create a line with «smooth»
+  #  edges. That is, as though a line would have been
+  #  drawn with the Shift+F6 tool («Draw Bezier curves
+  #  and straight lines») and then each node (except the
+  #  first and the last one) would have made smooth
+  # (F2, then «make selected node smooth»).
+  #
+  #  See also http://stackoverflow.com/questions/13037606/how-does-inkscape-calculate-the-coordinates-for-control-points-for-smooth-edges
+  #
+
+  my $self = shift;
+
+  my $path = new Path;
+  $self -> addElem($path);
+
+  my $nofNodes = @_ / 2.0;
+
+  die if $nofNodes != int($nofNodes) or $nofNodes < 3;
+
+  #  First segment
+
+  my $x_first = shift;
+  my $y_first = shift;
+
+  #  Move to coordinates of first node:
+
+  my $d = "M $x_first,$y_first";
+
+  #  The first control points coincide with
+  #  the first node:
+  $d .= " C $x_first,$y_first";
+
+
+  #
+
+  #  The first node is a «corner»:
+  my $sodipodi_nodetypes = 'c';
+
+
+  #  -----------------------------------
+
+  my $x_prev = $x_first;
+  my $y_prev = $y_first;
+
+  my $x_current = shift;
+  my $y_current = shift;
+
+  # iterate over nodes between first and last node:
+
+  for my $n (2 .. $nofNodes -1) {
+
+  #   Algorithm according to Inkscape's src/ui/tool/node.cpp, method Node::_updateAutoHandles.
+
+      my $x_next = shift;
+      my $y_next = shift;
+
+      my $x_vec_prev = $x_prev - $x_current;
+      my $y_vec_prev = $y_prev - $y_current;
+
+      my $x_vec_next = $x_next - $x_current;
+      my $y_vec_next = $y_next - $y_current;
+
+      my $len_prev   = sqrt( ($x_vec_prev * $x_vec_prev) + ($y_vec_prev * $y_vec_prev) );
+      my $len_next   = sqrt( ($x_vec_next * $x_vec_next) + ($y_vec_next * $y_vec_next) );
+
+
+      # "dir" is an unit vector perpendicular to the bisector of the angle created
+      # by the previous node, this node and the next node.
+
+      my $x_dir_=  ($len_prev / $len_next) * $x_vec_next - $x_vec_prev;
+      my $y_dir_=  ($len_prev / $len_next) * $y_vec_next - $y_vec_prev;
+
+      # Normalize "dir_"
+
+      my $x_dir = $x_dir_ / sqrt ( $x_dir_ * $x_dir_ + $y_dir_ * $y_dir_);
+      my $y_dir = $y_dir_ / sqrt ( $x_dir_ * $x_dir_ + $y_dir_ * $y_dir_);
+
+      my $x_prev_control_point = $x_current + (-$x_dir * ($len_prev / 3));
+      my $y_prev_control_point = $y_current + (-$y_dir * ($len_prev / 3));
+
+      my $x_next_control_point = $x_current + ( $x_dir * ($len_next / 3));
+      my $y_next_control_point = $y_current + ( $y_dir * ($len_next / 3));
+
+    # ----
+
+      $x_prev_control_point = output_number($x_prev_control_point);
+      $y_prev_control_point = output_number($y_prev_control_point);
+      $x_next_control_point = output_number($x_next_control_point);
+      $y_next_control_point = output_number($y_next_control_point);
+
+    # ----
+
+      $d .= " $x_prev_control_point,$y_prev_control_point $x_current,$y_current $x_next_control_point,$y_next_control_point";
+
+      $x_prev = $x_current;
+      $y_prev = $y_current;
+
+      $x_current = $x_next;
+      $y_current = $y_next;
+
+    # All nodes except the first and the last node are «smooth»:
+      $sodipodi_nodetypes .= 's';
+
+  }
+
+
+  #  Add last control point before last node. (As it happens,
+  #  this control point coincides with the last node:
+  $d .= " $x_current,$y_current";
+
+  #  Finally: add the last node:
+  $d .= " $x_current,$y_current";
+
+  $path->{d} = $d;
+
+  #  The last node is a «corner» (as is the first one):
+  $sodipodi_nodetypes .= 'c';
+
+  $path->{sodipodi_nodetypes} = $sodipodi_nodetypes;
+
+  return $path;
+
 }
 
 sub line {
@@ -146,13 +272,13 @@ sub addElem {
 }
 
 sub write {
-  
+
   my $self      = shift;
   my $svgFile   = shift;
   my $indent    = shift;
-  
+
   print $svgFile '  ' x $indent . "<g\n";
- 
+
   if (exists $self->{layerName}) {
       print $svgFile '  ' x $indent . "   inkscape:label=\"$self->{layerName}\"\n";
       print $svgFile '  ' x $indent . "   inkscape:groupmode=\"layer\"\n";
@@ -165,6 +291,17 @@ sub write {
   }
 
   print $svgFile '  ' x $indent . "</g>\n";
+}
+
+sub output_number {
+  my $number = shift;
+
+  my $ret = sprintf("%.7f", $number);
+
+  $ret =~ s/0*$//g;
+  $ret =~ s/\.$//g;
+
+  return $ret;
 }
 
 1;

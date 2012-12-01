@@ -8,3 +8,5 @@ to be able to call the function defined externally in [external.js](https://raw.
 ## Links
 
 See also [inline and external css definitions](https://github.com/ReneNyffenegger/development_misc/tree/master/web/css#readme)
+
+[Google Hosted Libraries](https://developers.google.com/speed/libraries/devguide) is a content distribution network for the most popular, open-source JavaScript libraries. 

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/html4/loose.dtd'>
+<html>
+<head>
+  <title>milliseconds</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+  <style type='text/css'>
+    * {font-family:Verdana}
+  </style>
+
+  <script type='text/javascript'>
+
+
+  var last_ms;
+  var last_repeat_ms;
+  function init() {
+
+     var dt         = new Date;
+     last_ms        = dt.getTime();
+     last_repeat_ms = dt.getTime();
+
+     repeat();
+  }
+  function diff() {
+     var dt = new Date;
+     var curr_ms = dt.getTime();
+     document.getElementById('currentMS').innerHTML = curr_ms + ' ms at last click';
+     document.getElementById('elapsedMS').innerHTML = (curr_ms-last_ms) + ' since last click';
+     last_ms = curr_ms;
+  }
+
+  var last_repeat_ms = dt.getTime();
+  function repeat() {
+     
+    var dt = new Date;
+    var curr_ms = dt.getTime();
+    document.getElementById('MSdiff').innerHTML = (curr_ms-last_repeat_ms) + ' since last call to repeat';
+    last_repeat_ms = curr_ms; 
+
+    setTimeout('repeat()', 50);
+  }
+
+  </script>
+
+</head>
+<body onload='init()'>
+
+  <div id='currentMS'></div>
+  <div id='elapsedMS'></div>
+  <div id='MSdiff'></div>
+
+  <form action='none'>
+    <input type='button' value='Show MS' onClick='diff()'>
+  </form>
+
+</body>
+</html>

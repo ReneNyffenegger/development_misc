@@ -1,0 +1,47 @@
+Some Cities				
+ {
+	America			
+   {
+		North America		
+     {
+			USA	
+       {
+				New York
+				Los Angeles
+				Houston
+       }
+			Canada	
+       {
+				Toronto
+       }
+     }
+		South America		
+     {
+			Brazil	
+       {
+				Rio de Janeiro
+				Sao Paolo
+       }
+			Argentina	
+       {
+				Boenos Aires
+				Corrientes
+				San Luis
+       }
+     }
+   }
+	Europe			
+   {
+		Germany		
+     {
+			Berlin	
+			Stuttgart	
+     }
+		France		
+     {
+			Paris	
+			Marseille	
+			Lyon	
+     }
+   }
+ }

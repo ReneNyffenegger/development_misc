@@ -2,11 +2,33 @@
 
 [run.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Config/run.pl).
 
+#Data
+
+##Data::Compare
+
+[run.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Data/Compare/run.pl).
+
+See also [List::Compare](https://github.com/ReneNyffenegger/development_misc/tree/master/perl/cpan/List/Compare).
+
 #Date
 
 ##Date::Manip
 
 [Manip.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Date/Manip.pl). 
+
+#DBD
+
+##DBD::Oracle
+
+[all.sql](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/DBD/Oracle/ref_cursor/all.sql) starts
+[01_table.sql](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/DBD/Oracle/ref_cursor/01_table.sql) to create a table and
+[02_function.sql](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/DBD/Oracle/ref_cursor/02_function.sql) to create a function that
+selects from the table via a *ref cursor* that the function returns.
+[03_perl.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/DBD/Oracle/ref_cursor/03_perl.pl) has an anonymous block that
+uses the function to get the ref cursor.
+[04_perl.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/DBD/Oracle/ref_cursor/04_perl.pl) does basically the same thing, but
+without the function.
+
 
 #Encode
 
@@ -54,11 +76,29 @@ remove a directory.
 
 [unnamed_parameter.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Getopt/Long/unnamed_parameter.pl)
 
+#List
+
+##List::Compare
+
+[get_symmetric_difference.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/List/Compare/get_symmetric_difference.pl)
+
+See also [Data::Compare](https://github.com/ReneNyffenegger/development_misc/tree/master/perl/cpan/Data/Compare)
+
+##List::Maker
+
+[run.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/List/Maker/run.pl)
+
 #MP3
 
 ##MP3::Tag
 
 [Tag.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/MP3/Tag/Tag.pl)
+
+#Net
+
+##Net::FTP
+
+[ftp.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Net/FTP/ftp.pl)
 
 #Scalar
 
@@ -71,6 +111,19 @@ remove a directory.
 [ANSIColor01.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Term/ANSIColor.01.pl) and
 [ANSIColor02.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Term/ANSIColor.02.pl). 
 
+#Tie
+
+##Tie::File
+
+Modify files through an array.
+
+[01_create_file.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Tie/File/01_create_file.pl),
+[02_insert_file.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Tie/File/02_insert_lines.pl),
+[03_modify_lines.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Tie/File/03_modify_lines.pl) and
+[04_remove_line.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Tie/File/04_remove_line.pl).
+
+[05_copy_array.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Tie/File/05_copy_array.pl) shows that the tied magic
+is not copied to another array.
 
 #Time
 
