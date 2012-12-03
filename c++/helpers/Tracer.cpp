@@ -45,7 +45,7 @@ TraceFunc_::TraceFunc_(std::string const& func_name) {
   func_name_ = func_name;
 
   indent++;
-  Trace_( (std::string("Entered ") + func_name));
+  Trace_( (std::string("Entered ") + func_name + " {"));
   indent++;
 }
 
@@ -53,13 +53,13 @@ TraceFunc_::TraceFunc_(std::string const& func_name, std::string const& somethin
   func_name_ = func_name;
 
   indent++;
-  Trace_( (std::string("Entered ") + func_name + " [" + something + "]"));
+  Trace_( (std::string("Entered ") + func_name + " [" + something + "] {"));
   indent++;
 }
 
 TraceFunc_::~TraceFunc_() {
   indent--;
-  Trace_    (std::string("Leaving ") + func_name_);
+  Trace_    (std::string("Leaving ") + func_name_ + " }");
   indent--;
 }
 
