@@ -44,22 +44,22 @@ void checkerr(OCIError* err, sword status, char errbuf[512]);
 
 void parse_connect_string (
    char* connect_str,  /* in   */
-   char  username[31], /* out  */
-   char  password[31], /* out  */
-   char  dbname  [31]  /* out  */
+   text  username[31], /* out  */
+   text  password[31], /* out  */
+   text  dbname  [31]  /* out  */
 );
 
 int oci_describe(
            OCIStmt*            sh,
-           char*               errmsg,
+/*         char*               errmsg,*/
     struct oci_connection*     conn,
     struct oci_description*    descr,
            int                 pos);
 
 int oci_connect(
-          char            username[30],
-          char            password[30],
-          char            dbname  [30],
+          text            username[30],
+          text            password[30],
+          text            dbname  [30],
    struct oci_connection* connection,
    char   errmsg  [512]
 );

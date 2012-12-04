@@ -3,15 +3,12 @@
 #include <string.h>
 #include <stdio.h>
 
-// TODO: raus
-//#include <windows.h>
-
 static int oci_env_created = 0;
 
 int oci_connect(
-          char            username[31],
-          char            password[31],
-          char            dbname  [31],
+          text            username[31],
+          text            password[31],
+          text            dbname  [31],
    struct oci_connection* conn,
           char errmsg[512]
    ) {
@@ -114,16 +111,16 @@ void checkerr(OCIError* err, sword status, char errbuf[512]) {
 
 void parse_connect_string(
    char* connect_str,  /* in   */
-   char  username[31], /* out  */
-   char  password[31], /* out  */
-   char  dbname  [31]  /* out  */
+   text  username[31], /* out  */
+   text  password[31], /* out  */
+   text  dbname  [31]  /* out  */
 ) {
 
   username[0] = 0;
   password[0] = 0;
   dbname  [0] = 0;
 
-  char* to=username;
+  text* to=username;
 
   while (*connect_str) {
     if (*connect_str == '/') {
@@ -259,19 +256,23 @@ int oci_define(
 
     switch (dt_type) {
       case SQLT_INT: 
+//      printf("SQLT_INT\n");
         value_ptr=va_arg(defines, dvoid*);
         sz       = sizeof(int); 
         break;
       case SQLT_FLT:  
+//      printf("SQLT_FLT\n");
         value_ptr = va_arg(defines, dvoid*);
         sz        = sizeof(double); 
         break;
       case SQLT_CHR:
       case SQLT_STR:
+//      printf("SQLT_STR\n");
         value_ptr = va_arg(defines, dvoid*);
-        sz        = va_arg(defines, int);
+        sz        = va_arg(defines, int); // or should this be long?
         break;
       case SQLT_ODT:
+//      printf("SQLT_ODT\n");
         value_ptr = va_arg(defines, dvoid*);
         sz        = sizeof(OCIDate);
         break;
@@ -316,8 +317,8 @@ int oci_execute(
   va_list      binds;
   ub2          dt_type;
   dvoid       *value_ptr;
-  int         *i;
-  double      *d;
+  int          i;
+  double       d;
 
   va_start(binds, nof_binds);
 
@@ -327,20 +328,24 @@ int oci_execute(
 
     switch (dt_type) {
       case SQLT_INT: 
-        i        = va_arg(binds, void(*));
+        i        = va_arg(binds, int);
+//      printf("SQLT_INT: %d\n", i);
         sz       = sizeof(int); 
-        value_ptr= i; 
+        value_ptr= &i; 
         break;
       case SQLT_FLT:  
-        d         = va_arg(binds, void(*));
+        d         = va_arg(binds, double);
+//      printf("SQLT_FLT: %f\n", d);
         sz        = sizeof(double); 
-        value_ptr = d; 
+        value_ptr = &d; 
         break;
       case SQLT_CHR:
         value_ptr = va_arg(binds, char*);
+//      printf("SQLT_CHR: %s\n", (char*) value_ptr);
         sz        = strlen( (char*) value_ptr);
         break;
       case SQLT_ODT:
+//      printf("SQLT_ODT\n");
         value_ptr = va_arg(binds, OCIDate*);
         sz        = sizeof(OCIDate);
         break;
@@ -367,7 +372,10 @@ int oci_execute(
         conn->svc, 
         sh, 
         conn->err, 
-        (ub4) 1,  // iters
+  //-------
+  //    (ub4) 1,  // iters
+        (ub4) 0,  // iters
+  //-------
         (ub4) 0, (CONST OCISnapshot *) 0, (OCISnapshot *) 0, (ub4) OCI_DEFAULT))) {
     checkerr(conn->err, r, errmsg);
     OCIHandleFree((dvoid*) sh, (ub4) OCI_HTYPE_STMT);
@@ -431,7 +439,7 @@ int oci_fetch(
 // Metalink note 125057.1
 int oci_describe(
            OCIStmt*            sh,
-           char*               errmsg,
+/*         char*               errmsg, */
     struct oci_connection*     conn,
     struct oci_description*    descr,
            int                 pos) {
