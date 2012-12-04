@@ -16,9 +16,9 @@ int main(int argc, char* argv[]) {
     exit (-1);
   }
 
-  char  username[30];
-  char  password[30];
-  char  dbname  [30];
+  text  username[31];
+  text  password[31];
+  text  dbname  [31];
 
   int   s;
   char  item    [100];
