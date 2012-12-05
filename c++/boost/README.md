@@ -20,7 +20,7 @@ Then, `bjam` is used to build `boost`:
     
 A simpler but identical way is:
 
-    C:\boost_1_52_0> bootstrap.bt
+    C:\boost_1_52_0> bootstrap.bat
     C:\boost_1_52_0> bjam --toolt
 
 
