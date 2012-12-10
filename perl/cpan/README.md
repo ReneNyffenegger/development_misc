@@ -1,3 +1,9 @@
+#Algorithm
+
+##Algorithm::Diff
+
+[LCS.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Algorithm/Diff/LCS.pl): the Longest Common Subsequence.
+
 #Config
 
 [run.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Config/run.pl).
