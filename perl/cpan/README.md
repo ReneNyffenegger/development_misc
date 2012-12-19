@@ -2,6 +2,12 @@
 
 [run.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Config/run.pl).
 
+#Digest
+
+##Digest::MD5
+
+[run.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Digest/MD5/run.pl).
+
 #Data
 
 ##Data::Compare
