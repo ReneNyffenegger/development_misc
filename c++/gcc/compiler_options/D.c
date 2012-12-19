@@ -1,0 +1,2 @@
+MACRO_1
+MACRO_2
