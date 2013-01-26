@@ -30,6 +30,11 @@ See also [List::Compare](https://github.com/ReneNyffenegger/development_misc/tre
 
 [Manip.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Date/Manip.pl). 
 
+##Date::Parse
+
+[Parse.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Date/Parse.pl) converts
+string representations of a time (such as *Thu Jan  1 02:00:00 1970*) to seconds since Jan 1st 1970.
+
 #DBD
 
 ##DBD::Oracle
