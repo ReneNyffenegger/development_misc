@@ -144,9 +144,15 @@ is not copied to another array.
 ##Time::Local
 
 Exports (among others) `timelocal` which is sort of the inverse of
-[localtime](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/language/functions/localtime.pl).
+[localtime.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/language/functions/localtime.pl).
 
 See [Local.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Time/Local.pl).
+
+##Time::localtime
+
+[localtime.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/language/Time/localtime.pl) demonstrates
+using `cimte` to get a string representation of dates.
+
 
 #UNIVERSAL
 
