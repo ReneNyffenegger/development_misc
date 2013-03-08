@@ -43,6 +43,7 @@ A **JEditorPane** can be used to display HTML or RTF.
 [HtmlLinks.java](https://raw.github.com/ReneNyffenegger/development_misc/master/java/swing/JComponent/JTextComponent/JEditorPane/HtmlLinks.java) extends *GeneratedHTML.java* in that
 it has links that can be clicked.
 
+### JPasswordField
 
 ##  JToggleButton
 
