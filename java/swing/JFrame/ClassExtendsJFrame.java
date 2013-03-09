@@ -7,6 +7,8 @@ public class ClassExtendsJFrame extends JFrame {
        }
    
        ClassExtendsJFrame() {
+              super("JFrame's title");
+
               setSize(100, 100);
               setDefaultCloseOperation(EXIT_ON_CLOSE);
               setVisible(true);

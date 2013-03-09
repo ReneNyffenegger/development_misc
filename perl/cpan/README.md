@@ -10,6 +10,12 @@
 
 [run.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Config/run.pl).
 
+#Digest
+
+##Digest::MD5
+
+[run.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Digest/MD5/run.pl).
+
 #Data
 
 ##Data::Compare
@@ -23,6 +29,11 @@ See also [List::Compare](https://github.com/ReneNyffenegger/development_misc/tre
 ##Date::Manip
 
 [Manip.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Date/Manip.pl). 
+
+##Date::Parse
+
+[Parse.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Date/Parse.pl) converts
+string representations of a time (such as *Thu Jan  1 02:00:00 1970*) to seconds since Jan 1st 1970.
 
 #DBD
 
@@ -138,9 +149,15 @@ is not copied to another array.
 ##Time::Local
 
 Exports (among others) `timelocal` which is sort of the inverse of
-[localtime](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/language/functions/localtime.pl).
+[localtime.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/language/functions/localtime.pl).
 
 See [Local.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Time/Local.pl).
+
+##Time::localtime
+
+[localtime.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/language/Time/localtime.pl) demonstrates
+using `cimte` to get a string representation of dates.
+
 
 #UNIVERSAL
 
