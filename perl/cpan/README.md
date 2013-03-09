@@ -16,6 +16,8 @@
 
 [run.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Digest/MD5/run.pl).
 
+[addfile.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/Digest/MD5/addfile.pl) calculates the digest for a file rather than for a string.
+
 #Data
 
 ##Data::Compare
