@@ -16,9 +16,7 @@ end sub ' }
 
 private sub timeReached_01() ' {
 
-
     msgBox "next message box in 5 seconds"
-    
 
     application.onTime now + timeValue("00:00:05"), "timeReached_02"
 
