@@ -91,6 +91,8 @@ sub xml_start_element {
         $expat -> {building} = 1;
      }
      else {
+     # TODO: Not sure if the 'unless $k eq... ' condition should be
+     # removed altogheter.
        push @{$expat -> {tags}}, {k=>$k, v=>$v} unless $k eq 'created_by' or $k eq 'source'
      }
   }
