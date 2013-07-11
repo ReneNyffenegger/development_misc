@@ -17,6 +17,8 @@ $xml_parser -> setHandlers (
    Default   => \&  default_element
 );
 
+# alternatively, use '$xml_parser -> parsefile($xml_file_name)', without
+# opening a file handle...
 $xml_parser -> parse($xml_file_h);
 
 
