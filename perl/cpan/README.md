@@ -109,6 +109,13 @@ See also [Data::Compare](https://github.com/ReneNyffenegger/development_misc/tre
 
 [run.pl](https://raw.github.com/ReneNyffenegger/development_misc/master/perl/cpan/List/Maker/run.pl)
 
+#LWP
+
+##LWP::Simple
+
+The [consesus on stackoverflow](http://stackoverflow.com/questions/134858/whats-the-simplest-way-to-make-a-http-get-request-in-perl) is that
+this is module is to be used to make the simplest **HTTP GET request** in Perl: 
+
 #MP3
 
 ##MP3::Tag

@@ -18,6 +18,8 @@ The following installs `Date::Manip`
     install Date::Manip
     exit
 
+It seems that an even faster way to do the same is to simply type `cpan Date::Manip`.
+
 ##-V:
 
 What make program was used to configure and build Perl:
