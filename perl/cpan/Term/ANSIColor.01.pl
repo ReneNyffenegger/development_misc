@@ -2,7 +2,7 @@
 #   How is it possible to have 'bold' colors for the background as well?
 #
 
-use Win32::Console::Ansi;
+use Win32::Console::ANSI;
 use Term::ANSIColor;
 
 use strict;

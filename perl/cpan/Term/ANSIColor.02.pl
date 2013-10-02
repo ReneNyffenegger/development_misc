@@ -1,4 +1,4 @@
-use Win32::Console::Ansi;
+use Win32::Console::ANSI;
 use Term::ANSIColor qw(:constants);
 
 use strict;
