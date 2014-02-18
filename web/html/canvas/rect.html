@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head><title>Draw line</title>
+    <script type="text/javascript">
+
+    function init() {
+
+       var canvas = document.getElementById('canvas');
+
+       var ctx = canvas.getContext('2d');
+
+       ctx.strokeStyle = '#f70';
+       ctx.beginPath();
+       ctx.rect( 50, 50, 200, 20);
+       ctx.stroke();
+
+       ctx.strokeStyle = '#70f';
+       ctx.beginPath();
+       ctx.rect( 250, 90, -200, 20);  // Note the negative width !
+       ctx.stroke();
+
+       ctx.strokeStyle = '#0f7';
+       ctx.beginPath();
+       ctx.rect( 250, 150, -200, -20);  // Note the negative height !
+       ctx.stroke();
+
+    } 
+
+    </script>
+    </head>
+
+<body onload='init();'>
+
+   
+      <canvas id    ='canvas' 
+                      width='900' height='600'
+              style ='width:900px;height:600px;border:solid 1px black;margin-left:-450px;margin-top:-300px;left:50%;position:fixed;top:50%' ></canvas>
+
+</body>
+</html>
