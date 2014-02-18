@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+  <head><title>Animated Canvas [requestAnimFrame]</title>
+    <script type="text/javascript">
+
+    function init() {
+
+      window.requestAnimFrame = (
+        function(callback) {
+          return  window.requestAnimationFrame       || 
+                  window.webkitRequestAnimationFrame || 
+                  window.mozRequestAnimationFrame    || 
+                  window.oRequestAnimationFrame      || 
+                  window.msRequestAnimationFrame     || 
+                  function(callback) { 
+                    window.setTimeout(callback, 1000 / 60); };
+                  }
+        )();
+
+
+      var initTime = (new Date()).getTime();
+      var radius_path   = 200;
+      var radius_circle =  30;
+      var x0            = 300;
+      var y0            = x0;
+
+      function animate() {
+
+          var time = new Date().getTime();
+          var timeDiff = time - initTime;
+
+          var secondsSinceStart = timeDiff / 1000;
+
+          var x = x0 + radius_path * Math.sin(2*Math.PI * secondsSinceStart / 10);
+          var y = y0 + radius_path * Math.cos(2*Math.PI * secondsSinceStart / 10);
+
+          context.clearRect(0, 0, canvas.width, canvas.height);
+
+          context.beginPath();
+
+          context.strokeStyle='#223311';
+          context.fillStyle  ='#ff9966';
+          context.arc(x, y, radius_circle, 0, 2*Math.PI);
+          context.closePath();
+          context.fill();
+      
+          context.stroke();
+
+          requestAnimFrame(function() {
+            animate();
+          });
+      }
+
+      var canvas  = document.getElementById('canvas');
+      var context = canvas.getContext('2d');
+
+      animate();
+    } 
+
+    </script>
+    </head>
+
+<body onload='init();' style='text-align:center'>
+
+   
+      <canvas id    ='canvas' 
+                      width='600' height='600'
+              style ='width:600px;height:600px;border:solid 1px black;margin-left:-300x' ></canvas>
+
+</body>
+</html>
+
