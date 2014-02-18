@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head><title>Canvas Events</title></head>
+    <script type="text/javascript">
+
+    function init() { try {
+
+       var canvas = document.getElementById('canvas');
+
+       canvas.onmouseup   = function(e) { alert ('mouse up @ '   + e.pageX + '/' + e.pageY)}
+       canvas.onmousedown = function(e) { alert ('mouse down @ ' + e.pageX + '/' + e.pageY)}
+       canvas.onmousemove = function(e) { alert ('mouse move @ ' + e.pageX + '/' + e.pageY)}
+
+
+    } catch(e) {alert (e)} } 
+
+
+    </script>
+
+<body onload='init();'>
+
+      <canvas id    ='canvas' 
+              style ='width:900px;height:600px;border:solid 1px black;margin-left:-450px;margin-top:-300px;left:50%;position:fixed;top:50%' >
+
+</body>
+</html>
