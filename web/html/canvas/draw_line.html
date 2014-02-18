@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head><title>Draw line</title>
+    <script type="text/javascript">
+
+    function init() { try {
+
+       var canvas = document.getElementById('canvas');
+
+       var context_2d = canvas.getContext('2d');
+
+       context_2d.beginPath();
+       context_2d.lineWidth   =  '10';
+       context_2d.strokeStyle = '#0000ff';
+       context_2d.moveTo(20 , 20);
+       context_2d.lineTo(860,560);
+       context_2d.stroke();
+
+       context_2d.beginPath();
+       context_2d.lineCap     = 'round';
+       context_2d.lineWidth   =  '10';
+       context_2d.strokeStyle = '#ff9900';
+       context_2d.moveTo(20 ,560);
+       context_2d.lineTo(860, 20);
+       context_2d.stroke();
+
+
+
+    } catch(e) {alert (e)} } 
+
+    </script>
+    </head>
+
+<body onload='init();'>
+
+   
+      <canvas id    ='canvas' 
+                      width='900' height='600'
+              style ='width:900px;height:600px;border:solid 1px black;margin-left:-450px;margin-top:-300px;left:50%;position:fixed;top:50%' ></canvas>
+
+</body>
+</html>
