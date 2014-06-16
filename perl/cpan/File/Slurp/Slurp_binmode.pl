@@ -2,27 +2,30 @@ use warnings;
 use strict;
 
 use File::Slurp;
+use File::Temp ('tempfile');
 
-my  $temp_file_name = 'c:/temp/slurp_binmode.txt';
+my $temp_file_name = write_temp_file();
 
-write_temp_file();
+print "temp_file_name = $temp_file_name\n";
 
-read_temp_file(0);
-read_temp_file(1);
+read_temp_file($temp_file_name, 0);
+read_temp_file($temp_file_name, 1);
 
 
 sub read_temp_file  {
 
-    my $with_bin_mode = shift;;
+    my $file_name     = shift;
+    my $with_bin_mode = shift;
+
     my $file_text;
 
     if ($with_bin_mode) {
     #    With binmode necessary to read the \x0d\x0a as such...
-        $file_text = read_file($temp_file_name, binmode => ':raw');
+        $file_text = read_file($file_name, binmode => ':raw');
     }
     else {
     #    ... otherwise, the \x0a is omitted.
-        $file_text = read_file($temp_file_name);
+        $file_text = read_file($file_name);
     }
 
 
@@ -38,7 +41,7 @@ sub read_temp_file  {
 
 sub write_temp_file {
 
-    open (my $file, '>', $temp_file_name);
+    my ($file, $file_name) = tempfile;
 
     binmode($file);
 
@@ -49,5 +52,7 @@ sub write_temp_file {
     print $file $txt;
 
     close $file;
+
+    return $file_name;
 
 };
