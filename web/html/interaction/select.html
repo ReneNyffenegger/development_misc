@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<!--
+
+  TODO: Should this not go under -> «events»
+
+-->
+  <head>
+    <meta charset="utf-8" />
+    <title>Combobox</title>
+    <style>
+     body {
+       background-color: #002233: /* Doesn't seem to change a thing */
+     }
+    </style>
+
+  <!--{--><script type="text/javascript">
+
+  var sel;
+  var out;
+
+  function init() {
+
+    sel = document.getElementById('sel');
+    out = document.getElementById('out');
+
+  }
+
+  function changed() {
+    out.innerHTML += sel.value + '<br>';
+  }
+
+  </script><!--}-->
+  </head>
+
+  <body onload="init();">
+
+    <select id="sel" name="bar" onchange="changed();">
+      <option>Foo</option>
+      <option>Bar</option>
+      <option>Baz</option>
+    </select>
+
+    <div id='out'>
+    </div>
+
+
+  </body>
+
+</html>
+
