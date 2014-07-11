@@ -17,7 +17,7 @@ option explicit
 '      xlYMDFormat
 '
 '  See some_data_import.bas for an example.
-   '
+'  See also https://github.com/ReneNyffenegger/oracle_scriptlets/blob/master/awr/AWRDataToExcel.bas
 '
 
 public sub CSV_import(csv_file_name as string, column_data_types as variant) ' {
