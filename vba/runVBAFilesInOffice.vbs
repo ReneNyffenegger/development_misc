@@ -4,7 +4,7 @@
 '
 ' The syntax (in cmd.exe) is:
 '
-'   x:\foo\bar> runVBAFilesInOffice.vbs -office_application file_one file_tow -c sub_name param_1 param_2 ...
+'   x:\foo\bar> runVBAFilesInOffice.vbs -office_application file_one file_two -c sub_name param_1 param_2 ...
 '  
 '      -office_application is one of (with leading hyphen):
 '           "-excel"
