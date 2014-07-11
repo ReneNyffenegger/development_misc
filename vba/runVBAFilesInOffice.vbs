@@ -1,10 +1,10 @@
-' This script can be used to load *.bas files into an Office-Application (Excel, Word...)
+' This script can be used to load *.bas files into an Office-Application (Excel, Word...) {
 ' and then execute a function in that/those *.bas files.
 ' 
 '
 ' The syntax (in cmd.exe) is:
 '
-'   x:\foo\bar> runVBAFilesInOffice.vbs -office_application file_one file_tow -c sub_name param_1 param_2 ...
+'   x:\foo\bar> runVBAFilesInOffice.vbs -office_application file_one file_two -c sub_name param_1 param_2 ...
 '  
 '      -office_application is one of (with leading hyphen):
 '           "-excel"
@@ -70,6 +70,7 @@
 '      Zugriff auf das VBA-Projektobjektmodell vertrauen
 '    gesetzt werden.
 '      
+' }
 
 option explicit
 
