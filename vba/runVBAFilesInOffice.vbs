@@ -45,9 +45,7 @@
 '
 '        Microsoft Word: Dem programmatischen Zugriff auf das Visual Basic-Projekt wird nicht vertraut.
 '
-'     sollte auf dem Office Button (Einstellungen) in (zB) Word auf 
-'
-'   sollte auf dem Office Button in (zB) Word auf
+'   sollte auf dem Office Button (Einstellungen) in (zB) Word auf
 '      (Word-)Optionen gegangen werden              -> 
 '       Vertrauensstellungscenter                   -> 
 '       Einstellungen für Vertrauensstellungscenter -> 
