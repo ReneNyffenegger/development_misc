@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Read a table with JavaScirpt</title>
+
+  <script type="text/javascript">
+
+  var current_row = 0;
+  var table_elem;
+  var number_of_rows_in_table;
+
+  function main() {
+
+    table_elem = document.getElementById('items');
+    number_of_rows_in_table = table_elem.rows.length;
+
+    set_background_color_of_nth_row(current_row, '#f70');
+  }
+
+  function set_background_color_of_nth_row(n, color) {
+
+    table_elem.rows[n].style.backgroundColor = color;
+
+  }
+
+  function highlight_next_row() {
+
+    set_background_color_of_nth_row(current_row, '#fff');
+    current_row = (current_row + 1) % number_of_rows_in_table;
+    set_background_color_of_nth_row(current_row, '#f70');
+
+  }
+  
+  </script>
+</head>
+<body onload="main();">
+
+   <table id="items" summary=".">
+     <tr><td> Item 0 </td><td> 12.03 </td></tr>
+     <tr><td> Item 1 </td><td>  7.28 </td></tr>
+     <tr><td> Item 2 </td><td> 15.72 </td></tr>
+     <tr><td> Total  </td><td> 35.03 </td></tr>
+   </table>
+
+   <form action="#">
+     <input type="button" value="Highlight next row" onclick="highlight_next_row();">
+   </form>
+
+</body>
+</html>
