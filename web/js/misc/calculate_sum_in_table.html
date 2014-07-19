@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Read a table with JavaScirpt</title>
+
+  <style type="text/css">
+    td:nth-child(2) {font-family: monospace; text-align:right;padding-left:2em}
+    #sum {font-weight: bold; background-color: #c0c0c0}
+  </style>
+
+  <script type="text/javascript">
+
+
+  function calculate_sum() {
+
+    var tab = document.getElementById('items');
+    var nofRows = tab.rows.length;
+
+    var total = 0;
+
+    for ( var i = 0; i < nofRows; i++ ) {
+
+      var tr = tab.rows[i];
+      var td = tr.childNodes[1];
+
+      if (i < nofRows -1) {
+        total += parseFloat(td.innerHTML);
+      }
+      else {
+        td.innerHTML = total;
+      }
+    }
+  }
+  
+  </script>
+</head>
+<body onload="main();">
+
+   <table id="items">
+     <tr><td> Item 0 </td><td         > 12.03 </td></tr>
+     <tr><td> Item 1 </td><td         >  7.28 </td></tr>
+     <tr><td> Item 2 </td><td         > 15.72 </td></tr>
+     <tr><td> Total  </td><td id="sum"> ????? </td></tr>
+   </table>
+
+<form>
+
+  <input type="button" value="Calculate sum!" onclick="calculate_sum();">
+</form>
+
+</body>
+</html>
