@@ -1,3 +1,8 @@
+'
+'   TODO This file has been moved to the Repository https://github.com/ReneNyffenegger/runVBAFilesInOffice
+'   ------------------------------------------------------------------------------------------------------
+'
+'
 ' This script can be used to load *.bas files into an Office-Application (Excel, Word...) {
 ' and then execute a function in that/those *.bas files.
 ' 
