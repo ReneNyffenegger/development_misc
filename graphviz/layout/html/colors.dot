@@ -1,0 +1,16 @@
+digraph D {
+
+  node [shape=plaintext]
+
+  a [
+     label=<
+<table border="0" cellborder="1" cellspacing="0">
+  <tr><td bgcolor="yellow">Foo</td></tr>
+  <tr><td bgcolor="lightblue">Bar</td></tr>
+  <tr><td bgcolor="#f0e3ff"><font color="#ff1020">Baz</font></td></tr>
+</table>>
+  ];
+ 
+
+
+}
