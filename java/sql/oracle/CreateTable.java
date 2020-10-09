@@ -1,4 +1,5 @@
 import java.sql.*;
+
 class CreateTable {
 
   public static void main (String[] args) throws Exception {

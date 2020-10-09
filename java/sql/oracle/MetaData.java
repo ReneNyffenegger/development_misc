@@ -1,4 +1,5 @@
 import java.sql.*;
+
 class MetaData {
 
       public static void main (String[] args) throws Exception {
@@ -8,7 +9,6 @@ class MetaData {
              PreparedStatement stmt = conn.prepareStatement("select * from tq84_testy_testy");
              ResultSet         rs   = stmt.executeQuery    ();
              ResultSetMetaData meta = rs  .getMetaData     ();
-
 
              int nofColumns  = meta.getColumnCount();
 
@@ -27,11 +27,9 @@ class MetaData {
                     meta . getColumnTypeName(actColumn)
 
                   );
-
              }
         
              stmt.close();
              conn.close();
       }
 }
-
